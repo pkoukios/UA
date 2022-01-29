@@ -1,0 +1,2257 @@
+{
+  "country": [
+    {
+      "isEU": "true",
+      "code": "GB",
+      "value": "UNITED_KINGDOM"
+    },
+    {
+      "isEU": "true",
+      "code": "AT",
+      "value": "AUSTRIA"
+    },
+    {
+      "isEU": "true",
+      "code": "BE",
+      "value": "BELGIUM"
+    },
+    {
+      "isEU": "true",
+      "code": "BX",
+      "value": "BENELUX"
+    },
+    {
+      "isEU": "true",
+      "code": "BG",
+      "value": "BULGARIA"
+    },
+    {
+      "isEU": "true",
+      "code": "CY",
+      "value": "CYPRUS"
+    },
+    {
+      "isEU": "true",
+      "code": "CZ",
+      "value": "CZECH_REPUBLIC"
+    },
+    {
+      "isEU": "true",
+      "code": "DK",
+      "value": "DENMARK"
+    },
+    {
+      "isEU": "true",
+      "code": "EE",
+      "value": "ESTONIA"
+    },
+    {
+      "isEU": "true",
+      "code": "FI",
+      "value": "FINLAND"
+    },
+    {
+      "isEU": "true",
+      "code": "FR",
+      "value": "FRANCE"
+    },
+    {
+      "isEU": "true",
+      "code": "DE",
+      "value": "GERMANY"
+    },
+    {
+      "isEU": "true",
+      "code": "GR",
+      "value": "GREECE"
+    },
+    {
+      "isEU": "true",
+      "code": "HR",
+      "value": "CROATIA_(Hrvatska)"
+    },
+    {
+      "isEU": "true",
+      "code": "HU",
+      "value": "HUNGARY"
+    },
+    {
+      "isEU": "true",
+      "code": "IE",
+      "value": "IRELAND"
+    },
+    {
+      "isEU": "true",
+      "code": "IT",
+      "value": "ITALY"
+    },
+    {
+      "isEU": "true",
+      "code": "LV",
+      "value": "LATVIA"
+    },
+    {
+      "isEU": "true",
+      "code": "LT",
+      "value": "LITHUANIA"
+    },
+    {
+      "isEU": "true",
+      "code": "LU",
+      "value": "LUXEMBOURG"
+    },
+    {
+      "isEU": "true",
+      "code": "MT",
+      "value": "MALTA"
+    },
+    {
+      "isEU": "true",
+      "code": "NL",
+      "value": "NETHERLANDS"
+    },
+    {
+      "isEU": "true",
+      "code": "NO",
+      "value": "NORWAY"
+    },
+    {
+      "isEU": "true",
+      "code": "PL",
+      "value": "POLAND"
+    },
+    {
+      "isEU": "true",
+      "code": "PT",
+      "value": "PORTUGAL"
+    },
+    {
+      "isEU": "true",
+      "code": "RO",
+      "value": "ROMANIA"
+    },
+    {
+      "isEU": "true",
+      "code": "SK",
+      "value": "SLOVAKIA"
+    },
+    {
+      "isEU": "true",
+      "code": "SI",
+      "value": "SLOVENIA"
+    },
+    {
+      "isEU": "true",
+      "code": "ES",
+      "value": "SPAIN"
+    },
+    {
+      "isEU": "true",
+      "code": "SE",
+      "value": "SWEDEN"
+    },
+    {
+      "isEU": "false",
+      "code": "AF",
+      "value": "AFGHANISTAN"
+    },
+    {
+      "isEU": "false",
+      "code": "AP",
+      "value": "ARIPO"
+    },
+    {
+      "isEU": "false",
+      "code": "AL",
+      "value": "ALBANIA"
+    },
+    {
+      "isEU": "false",
+      "code": "DZ",
+      "value": "ALGERIA"
+    },
+    {
+      "isEU": "false",
+      "code": "AS",
+      "value": "AMERICAN_SAMOA"
+    },
+    {
+      "isEU": "false",
+      "code": "AD",
+      "value": "ANDORRA"
+    },
+    {
+      "isEU": "false",
+      "code": "AO",
+      "value": "ANGOLA"
+    },
+    {
+      "isEU": "false",
+      "code": "AI",
+      "value": "ANGUILLA"
+    },
+    {
+      "isEU": "false",
+      "code": "AQ",
+      "value": "ANTARCTICA"
+    },
+    {
+      "isEU": "false",
+      "code": "AG",
+      "value": "ANTIGUA_AND_BARBUDA"
+    },
+    {
+      "isEU": "false",
+      "code": "AR",
+      "value": "ARGENTINA"
+    },
+    {
+      "isEU": "false",
+      "code": "AM",
+      "value": "ARMENIA"
+    },
+    {
+      "isEU": "false",
+      "code": "AW",
+      "value": "ARUBA"
+    },
+    {
+      "isEU": "false",
+      "code": "AU",
+      "value": "AUSTRALIA"
+    },
+    {
+      "isEU": "false",
+      "code": "AZ",
+      "value": "AZERBAIJAN"
+    },
+    {
+      "isEU": "false",
+      "code": "BS",
+      "value": "BAHAMAS"
+    },
+    {
+      "isEU": "false",
+      "code": "BH",
+      "value": "BAHRAIN"
+    },
+    {
+      "isEU": "false",
+      "code": "BD",
+      "value": "BANGLADESH"
+    },
+    {
+      "isEU": "false",
+      "code": "BB",
+      "value": "BARBADOS"
+    },
+    {
+      "isEU": "false",
+      "code": "BY",
+      "value": "BELARUS"
+    },
+    {
+      "isEU": "false",
+      "code": "BZ",
+      "value": "BELIZE"
+    },
+    {
+      "isEU": "false",
+      "code": "BJ",
+      "value": "BENIN"
+    },
+    {
+      "isEU": "false",
+      "code": "BM",
+      "value": "BERMUDA"
+    },
+    {
+      "isEU": "false",
+      "code": "BT",
+      "value": "BHUTAN"
+    },
+    {
+      "isEU": "false",
+      "code": "BO",
+      "value": "BOLIVIA"
+    },
+    {
+      "isEU": "false",
+      "code": "BQ",
+      "value": "BONAIRE_SINT_EUSTATIUS_SABA"
+    },
+    {
+      "isEU": "false",
+      "code": "BA",
+      "value": "BOSNIA_HERZEGOVINA"
+    },
+    {
+      "isEU": "false",
+      "code": "BW",
+      "value": "BOTSWANA"
+    },
+    {
+      "isEU": "false",
+      "code": "BV",
+      "value": "BOUVET_ISLAND"
+    },
+    {
+      "isEU": "false",
+      "code": "BR",
+      "value": "BRAZIL"
+    },
+    {
+      "isEU": "false",
+      "code": "IO",
+      "value": "BRITISH_INDIAN_OCEAN"
+    },
+    {
+      "isEU": "false",
+      "code": "BN",
+      "value": "BRUNEI"
+    },
+    {
+      "isEU": "false",
+      "code": "BF",
+      "value": "BURKINA_FASO"
+    },
+    {
+      "isEU": "false",
+      "code": "BI",
+      "value": "BURUNDI"
+    },
+    {
+      "isEU": "false",
+      "code": "KH",
+      "value": "CAMBODIA"
+    },
+    {
+      "isEU": "false",
+      "code": "CM",
+      "value": "CAMEROON"
+    },
+    {
+      "isEU": "false",
+      "code": "CA",
+      "value": "CANADA"
+    },
+    {
+      "isEU": "false",
+      "code": "CV",
+      "value": "CAPE_VERDE"
+    },
+    {
+      "isEU": "false",
+      "code": "KY",
+      "value": "CAYMAN_ISLANDS"
+    },
+    {
+      "isEU": "false",
+      "code": "CF",
+      "value": "CENTRAL_AFRICAN_REP"
+    },
+    {
+      "isEU": "false",
+      "code": "TD",
+      "value": "CHAD"
+    },
+    {
+      "isEU": "false",
+      "code": "CL",
+      "value": "CHILE"
+    },
+    {
+      "isEU": "false",
+      "code": "CN",
+      "value": "CHINA"
+    },
+    {
+      "isEU": "false",
+      "code": "CX",
+      "value": "CHRISTMAS_ISLAND"
+    },
+    {
+      "isEU": "false",
+      "code": "CC",
+      "value": "COCOS_(KEELING)_ISL"
+    },
+    {
+      "isEU": "false",
+      "code": "CO",
+      "value": "COLOMBIA"
+    },
+    {
+      "isEU": "false",
+      "code": "KM",
+      "value": "COMOROS"
+    },
+    {
+      "isEU": "false",
+      "code": "CK",
+      "value": "COOK_ISLANDS"
+    },
+    {
+      "isEU": "false",
+      "code": "CR",
+      "value": "COSTA_RICA"
+    },
+    {
+      "isEU": "false",
+      "code": "CU",
+      "value": "CUBA"
+    },
+    {
+      "isEU": "false",
+      "code": "CW",
+      "value": "CURACAO"
+    },
+    {
+      "isEU": "false",
+      "code": "DJ",
+      "value": "DJIBOUTI"
+    },
+    {
+      "isEU": "false",
+      "code": "DM",
+      "value": "DOMINICA"
+    },
+    {
+      "isEU": "false",
+      "code": "DO",
+      "value": "DOMINICAN_REPUBLIC"
+    },
+    {
+      "isEU": "false",
+      "code": "TL",
+      "value": "EAST_TIMOR"
+    },
+    {
+      "isEU": "false",
+      "code": "EC",
+      "value": "ECUADOR"
+    },
+    {
+      "isEU": "false",
+      "code": "EG",
+      "value": "EGYPT"
+    },
+    {
+      "isEU": "false",
+      "code": "SV",
+      "value": "EL_SALVADOR"
+    },
+    {
+      "isEU": "false",
+      "code": "GQ",
+      "value": "EQUATORIAL_GUINEA"
+    },
+    {
+      "isEU": "false",
+      "code": "ER",
+      "value": "ERITREA"
+    },
+    {
+      "isEU": "false",
+      "code": "ET",
+      "value": "ETHIOPIA"
+    },
+    {
+      "isEU": "false",
+      "code": "EA",
+      "value": "EURASIAN_PATENT_ORGANIZATION_EAPO"
+    },
+    {
+      "isEU": "false",
+      "code": "FK",
+      "value": "FALKLAND_ISLANDS"
+    },
+    {
+      "isEU": "false",
+      "code": "FO",
+      "value": "FAEROE_ISLANDS"
+    },
+    {
+      "isEU": "false",
+      "code": "FJ",
+      "value": "FIJI"
+    },
+    {
+      "isEU": "false",
+      "code": "GF",
+      "value": "FRENCH_GUIANA"
+    },
+    {
+      "isEU": "false",
+      "code": "PF",
+      "value": "FRENCH_POLYNESIA"
+    },
+    {
+      "isEU": "false",
+      "code": "TF",
+      "value": "FRENCH_SOUTHERN_TERR"
+    },
+    {
+      "isEU": "false",
+      "code": "MK",
+      "value": "FYROM"
+    },
+    {
+      "isEU": "false",
+      "code": "GA",
+      "value": "GABON"
+    },
+    {
+      "isEU": "false",
+      "code": "GM",
+      "value": "GAMBIA"
+    },
+    {
+      "isEU": "false",
+      "code": "GE",
+      "value": "GEORGIA"
+    },
+    {
+      "isEU": "false",
+      "code": "GH",
+      "value": "GHANA"
+    },
+    {
+      "isEU": "true",
+      "code": "GI",
+      "value": "GIBRALTAR"
+    },
+    {
+      "isEU": "false",
+      "code": "GL",
+      "value": "GREENLAND"
+    },
+    {
+      "isEU": "false",
+      "code": "GD",
+      "value": "GRENADA"
+    },
+    {
+      "isEU": "false",
+      "code": "GP",
+      "value": "GUADELOUPE"
+    },
+    {
+      "isEU": "false",
+      "code": "GU",
+      "value": "GUAM"
+    },
+    {
+      "isEU": "false",
+      "code": "GT",
+      "value": "GUATEMALA"
+    },
+    {
+      "isEU": "false",
+      "code": "GG",
+      "value": "GUERNSEY"
+    },
+    {
+      "isEU": "false",
+      "code": "GN",
+      "value": "GUINEA"
+    },
+    {
+      "isEU": "false",
+      "code": "GW",
+      "value": "GUINEA-BISSAU"
+    },
+    {
+      "isEU": "false",
+      "code": "GY",
+      "value": "GUYANA"
+    },
+    {
+      "isEU": "false",
+      "code": "HT",
+      "value": "HAITI"
+    },
+    {
+      "isEU": "false",
+      "code": "HM",
+      "value": "HEARD_Mc_DONALD_ISL"
+    },
+    {
+      "isEU": "false",
+      "code": "HN",
+      "value": "HONDURAS"
+    },
+    {
+      "isEU": "false",
+      "code": "HK",
+      "value": "HONG_KONG"
+    },
+    {
+      "isEU": "false",
+      "code": "IS",
+      "value": "ICELAND"
+    },
+    {
+      "isEU": "false",
+      "code": "IN",
+      "value": "INDIA"
+    },
+    {
+      "isEU": "false",
+      "code": "IB",
+      "value": "INTERNATIONAL_BUREAU_IP_WIPO"
+    },
+    {
+      "isEU": "false",
+      "code": "ID",
+      "value": "INDONESIA"
+    },
+    {
+      "isEU": "false",
+      "code": "IR",
+      "value": "IRAN"
+    },
+    {
+      "isEU": "false",
+      "code": "IQ",
+      "value": "IRAQ"
+    },
+    {
+      "isEU": "false",
+      "code": "IL",
+      "value": "ISRAEL"
+    },
+    {
+      "isEU": "false",
+      "code": "IM",
+      "value": "ISLE_OF_MAN"
+    },
+    {
+      "isEU": "false",
+      "code": "CI",
+      "value": "IVORY_COAST"
+    },
+    {
+      "isEU": "false",
+      "code": "JM",
+      "value": "JAMAICA"
+    },
+    {
+      "isEU": "false",
+      "code": "JP",
+      "value": "JAPAN"
+    },
+    {
+      "isEU": "false",
+      "code": "JE",
+      "value": "JERSEY"
+    },
+    {
+      "isEU": "false",
+      "code": "JO",
+      "value": "JORDAN"
+    },
+    {
+      "isEU": "false",
+      "code": "KZ",
+      "value": "KAZAKHSTAN"
+    },
+    {
+      "isEU": "false",
+      "code": "KE",
+      "value": "KENYA"
+    },
+    {
+      "isEU": "false",
+      "code": "KI",
+      "value": "KIRIBATI"
+    },
+    {
+      "isEU": "false",
+      "code": "KW",
+      "value": "KUWAIT"
+    },
+    {
+      "isEU": "false",
+      "code": "KG",
+      "value": "KYRGYZSTAN"
+    },
+    {
+      "isEU": "false",
+      "code": "LA",
+      "value": "LAOS"
+    },
+    {
+      "isEU": "false",
+      "code": "LB",
+      "value": "LEBANON"
+    },
+    {
+      "isEU": "false",
+      "code": "LS",
+      "value": "LESOTHO"
+    },
+    {
+      "isEU": "false",
+      "code": "LR",
+      "value": "LIBERIA"
+    },
+    {
+      "isEU": "false",
+      "code": "LY",
+      "value": "LIBYA"
+    },
+    {
+      "isEU": "false",
+      "code": "LI",
+      "value": "LIECHTENSTEIN"
+    },
+    {
+      "isEU": "false",
+      "code": "MO",
+      "value": "MACAU"
+    },
+    {
+      "isEU": "false",
+      "code": "MG",
+      "value": "MADAGASCAR"
+    },
+    {
+      "isEU": "false",
+      "code": "MW",
+      "value": "MALAWI"
+    },
+    {
+      "isEU": "false",
+      "code": "MY",
+      "value": "MALAYSIA"
+    },
+    {
+      "isEU": "false",
+      "code": "MV",
+      "value": "MALDIVES"
+    },
+    {
+      "isEU": "false",
+      "code": "ML",
+      "value": "MALI"
+    },
+    {
+      "isEU": "false",
+      "code": "MH",
+      "value": "MARSHALL_ISLANDS"
+    },
+    {
+      "isEU": "false",
+      "code": "MQ",
+      "value": "MARTINIQUE"
+    },
+    {
+      "isEU": "false",
+      "code": "MR",
+      "value": "MAURITANIA"
+    },
+    {
+      "isEU": "false",
+      "code": "MU",
+      "value": "MAURITIUS"
+    },
+    {
+      "isEU": "false",
+      "code": "YT",
+      "value": "MAYOTTE"
+    },
+    {
+      "isEU": "false",
+      "code": "MX",
+      "value": "MEXICO"
+    },
+    {
+      "isEU": "false",
+      "code": "FM",
+      "value": "MICRONESIA"
+    },
+    {
+      "isEU": "false",
+      "code": "MD",
+      "value": "MOLDOVA"
+    },
+    {
+      "isEU": "false",
+      "code": "MC",
+      "value": "MONACO"
+    },
+    {
+      "isEU": "false",
+      "code": "MN",
+      "value": "MONGOLIA"
+    },
+    {
+      "isEU": "false",
+      "code": "ME",
+      "value": "MONTENEGRO"
+    },
+    {
+      "isEU": "false",
+      "code": "MS",
+      "value": "MONTSERRAT"
+    },
+    {
+      "isEU": "false",
+      "code": "MA",
+      "value": "MOROCCO"
+    },
+    {
+      "isEU": "false",
+      "code": "MZ",
+      "value": "MOZAMBIQUE"
+    },
+    {
+      "isEU": "false",
+      "code": "MM",
+      "value": "MYANMAR"
+    },
+    {
+      "isEU": "false",
+      "code": "NA",
+      "value": "NAMIBIA"
+    },
+    {
+      "isEU": "false",
+      "code": "NR",
+      "value": "NAURU"
+    },
+    {
+      "isEU": "false",
+      "code": "NP",
+      "value": "NEPAL"
+    },
+    {
+      "isEU": "false",
+      "code": "AN",
+      "value": "NETHERLANDS_ANTILLES"
+    },
+    {
+      "isEU": "false",
+      "code": "NC",
+      "value": "NEW_CALEDONIA"
+    },
+    {
+      "isEU": "false",
+      "code": "NZ",
+      "value": "NEW_ZEALAND"
+    },
+    {
+      "isEU": "false",
+      "code": "NI",
+      "value": "NICARAGUA"
+    },
+    {
+      "isEU": "false",
+      "code": "NE",
+      "value": "NIGER"
+    },
+    {
+      "isEU": "false",
+      "code": "NG",
+      "value": "NIGERIA"
+    },
+    {
+      "isEU": "false",
+      "code": "NU",
+      "value": "NIUE"
+    },
+    {
+      "isEU": "false",
+      "code": "NF",
+      "value": "NORFOLK_ISLAND"
+    },
+    {
+      "isEU": "false",
+      "code": "KP",
+      "value": "NORTH_KOREA"
+    },
+    {
+      "isEU": "false",
+      "code": "MP",
+      "value": "NORTHERN_MARIANA_ISL"
+    },
+    {
+      "isEU": "false",
+      "code": "OM",
+      "value": "OMAN"
+    },
+    {
+      "isEU": "false",
+      "code": "PK",
+      "value": "PAKISTAN"
+    },
+    {
+      "isEU": "false",
+      "code": "PW",
+      "value": "PALAU"
+    },
+    {
+      "isEU": "false",
+      "code": "PA",
+      "value": "PANAMA"
+    },
+    {
+      "isEU": "false",
+      "code": "PG",
+      "value": "PAPUA_NEW_GUINEA"
+    },
+    {
+      "isEU": "false",
+      "code": "PY",
+      "value": "PARAGUAY"
+    },
+    {
+      "isEU": "false",
+      "code": "PE",
+      "value": "PERU"
+    },
+    {
+      "isEU": "false",
+      "code": "PH",
+      "value": "PHILIPPINES"
+    },
+    {
+      "isEU": "false",
+      "code": "PN",
+      "value": "PITCAIRN"
+    },
+    {
+      "isEU": "false",
+      "code": "PR",
+      "value": "PUERTO_RICO"
+    },
+    {
+      "isEU": "false",
+      "code": "QA",
+      "value": "QATAR"
+    },
+    {
+      "isEU": "false",
+      "code": "CD",
+      "value": "REPUBLIC_OF_THE_CONGO"
+    },
+    {
+      "isEU": "false",
+      "code": "RE",
+      "value": "REUNION"
+    },
+    {
+      "isEU": "false",
+      "code": "RU",
+      "value": "RUSSIA"
+    },
+    {
+      "isEU": "false",
+      "code": "RW",
+      "value": "RWANDA"
+    },
+    {
+      "isEU": "false",
+      "code": "KN",
+      "value": "SAINT_KITTS_AND_NEVIS"
+    },
+    {
+      "isEU": "false",
+      "code": "LC",
+      "value": "SAINT_LUCIA"
+    },
+    {
+      "isEU": "false",
+      "code": "SH",
+      "value": "SAINT_HELENA"
+    },
+    {
+      "isEU": "false",
+      "code": "PM",
+      "value": "SAINT_PIERRE_MIQUELON"
+    },
+    {
+      "isEU": "false",
+      "code": "VC",
+      "value": "SNT_VINCENT_AGRENAD"
+    },
+    {
+      "isEU": "false",
+      "code": "WS",
+      "value": "SAMOA"
+    },
+    {
+      "isEU": "false",
+      "code": "SM",
+      "value": "SAN_MARINO"
+    },
+    {
+      "isEU": "false",
+      "code": "ST",
+      "value": "SAO_TOME_AND_PRINCIPE"
+    },
+    {
+      "isEU": "false",
+      "code": "SA",
+      "value": "SAUDI_ARABIA"
+    },
+    {
+      "isEU": "false",
+      "code": "SN",
+      "value": "SENEGAL"
+    },
+    {
+      "isEU": "false",
+      "code": "RS",
+      "value": "SERBIA"
+    },
+    {
+      "isEU": "false",
+      "code": "SC",
+      "value": "SEYCHELLES"
+    },
+    {
+      "isEU": "false",
+      "code": "SL",
+      "value": "SIERRA_LEONE"
+    },
+    {
+      "isEU": "false",
+      "code": "SG",
+      "value": "SINGAPORE"
+    },
+    {
+      "isEU": "false",
+      "code": "SB",
+      "value": "SOLOMON_ISLANDS"
+    },
+    {
+      "isEU": "false",
+      "code": "SO",
+      "value": "SOMALIA"
+    },
+    {
+      "isEU": "false",
+      "code": "ZA",
+      "value": "SOUTH_AFRICA"
+    },
+    {
+      "isEU": "false",
+      "code": "KR",
+      "value": "SOUTH_KOREA"
+    },
+    {
+      "isEU": "false",
+      "code": "GS",
+      "value": "STH_GEORGIA_STH_SAND"
+    },
+    {
+      "isEU": "false",
+      "code": "LK",
+      "value": "SRI_LANKA"
+    },
+    {
+      "isEU": "false",
+      "code": "SD",
+      "value": "SUDAN"
+    },
+    {
+      "isEU": "false",
+      "code": "SR",
+      "value": "SURINAME"
+    },
+    {
+      "isEU": "false",
+      "code": "SJ",
+      "value": "SVAL_N_JAN_MAYEN_ISL"
+    },
+    {
+      "isEU": "false",
+      "code": "SZ",
+      "value": "SWAZILAND"
+    },
+    {
+      "isEU": "false",
+      "code": "CH",
+      "value": "SWITZERLAND"
+    },
+    {
+      "isEU": "false",
+      "code": "SY",
+      "value": "SYRIA"
+    },
+    {
+      "isEU": "false",
+      "code": "TW",
+      "value": "TAIWAN"
+    },
+    {
+      "isEU": "false",
+      "code": "TJ",
+      "value": "TAJIKISTAN"
+    },
+    {
+      "isEU": "false",
+      "code": "TZ",
+      "value": "TANZANIA,_UN_REP_OF"
+    },
+    {
+      "isEU": "false",
+      "code": "TH",
+      "value": "THAILAND"
+    },
+    {
+      "isEU": "false",
+      "code": "TG",
+      "value": "TOGO"
+    },
+    {
+      "isEU": "false",
+      "code": "TK",
+      "value": "TOKELAU"
+    },
+    {
+      "isEU": "false",
+      "code": "TO",
+      "value": "TONGA"
+    },
+    {
+      "isEU": "false",
+      "code": "TT",
+      "value": "TRINIDAD_AND_TOBAGO"
+    },
+    {
+      "isEU": "false",
+      "code": "TN",
+      "value": "TUNISIA"
+    },
+    {
+      "isEU": "false",
+      "code": "TR",
+      "value": "TURKEY"
+    },
+    {
+      "isEU": "false",
+      "code": "TM",
+      "value": "TURKMENISTAN"
+    },
+    {
+      "isEU": "false",
+      "code": "TC",
+      "value": "TURKS_AND_CAICOS_ISL"
+    },
+    {
+      "isEU": "false",
+      "code": "TV",
+      "value": "TUVALU"
+    },
+    {
+      "isEU": "false",
+      "code": "UG",
+      "value": "UGANDA"
+    },
+    {
+      "isEU": "false",
+      "code": "UA",
+      "value": "UKRAINE"
+    },
+    {
+      "isEU": "false",
+      "code": "AE",
+      "value": "UNITED_ARAB_EMIRATES"
+    },
+    {
+      "isEU": "false",
+      "code": "US",
+      "value": "UNITED_STATES"
+    },
+    {
+      "isEU": "false",
+      "code": "UM",
+      "value": "US_MINOR_OUTLYIN_ISL"
+    },
+    {
+      "isEU": "false",
+      "code": "UY",
+      "value": "URUGUAY"
+    },
+    {
+      "isEU": "false",
+      "code": "UZ",
+      "value": "UZBEKISTAN"
+    },
+    {
+      "isEU": "false",
+      "code": "VU",
+      "value": "VANUATU"
+    },
+    {
+      "isEU": "false",
+      "code": "VA",
+      "value": "VATICAN_CITY_STATE"
+    },
+    {
+      "isEU": "false",
+      "code": "VE",
+      "value": "VENEZUELA"
+    },
+    {
+      "isEU": "false",
+      "code": "VN",
+      "value": "VIETNAM"
+    },
+    {
+      "isEU": "false",
+      "code": "VG",
+      "value": "VIRGIN_ISL_(BRITISH)"
+    },
+    {
+      "isEU": "false",
+      "code": "VI",
+      "value": "VIRGIN_ISLANDS_(U.S.)"
+    },
+    {
+      "isEU": "false",
+      "code": "WF",
+      "value": "WALLIS_AND_FUTUNA_ISL"
+    },
+    {
+      "isEU": "false",
+      "code": "EH",
+      "value": "WESTERN_SAHARA"
+    },
+    {
+      "isEU": "false",
+      "code": "YE",
+      "value": "YEMEN"
+    },
+    {
+      "isEU": "false",
+      "code": "ZM",
+      "value": "ZAMBIA"
+    },
+    {
+      "isEU": "false",
+      "code": "ZW",
+      "value": "ZIMBABWE"
+    }
+  ],
+  "states": {
+    "country": [
+      {
+        "countryCode": "US",
+        "state": [
+          {
+            "code": "AL",
+            "value": "Alabama"
+          },
+          {
+            "code": "AK",
+            "value": "Alaska"
+          },
+          {
+            "code": "AZ",
+            "value": "Arizona"
+          },
+          {
+            "code": "AR",
+            "value": "Arkansas"
+          },
+          {
+            "code": "CA",
+            "value": "California"
+          },
+          {
+            "code": "CO",
+            "value": "Colorado"
+          },
+          {
+            "code": "CT",
+            "value": "Connecticut"
+          },
+          {
+            "code": "DE",
+            "value": "Delaware"
+          },
+          {
+            "code": "DC",
+            "value": "DistrictOfColumbia"
+          },
+          {
+            "code": "FL",
+            "value": "Florida"
+          },
+          {
+            "code": "GA",
+            "value": "Georgia"
+          },
+          {
+            "code": "HI",
+            "value": "Hawaii"
+          },
+          {
+            "code": "ID",
+            "value": "Idaho"
+          },
+          {
+            "code": "IL",
+            "value": "Illinois"
+          },
+          {
+            "code": "IN",
+            "value": "Indiana"
+          },
+          {
+            "code": "IA",
+            "value": "Iowa"
+          },
+          {
+            "code": "KS",
+            "value": "Kansas"
+          },
+          {
+            "code": "KY",
+            "value": "Kentucky"
+          },
+          {
+            "code": "LA",
+            "value": "Louisiana"
+          },
+          {
+            "code": "ME",
+            "value": "Maine"
+          },
+          {
+            "code": "MD",
+            "value": "Maryland"
+          },
+          {
+            "code": "MA",
+            "value": "Massachusetts"
+          },
+          {
+            "code": "MI",
+            "value": "Michigan"
+          },
+          {
+            "code": "MN",
+            "value": "Minnesota"
+          },
+          {
+            "code": "MS",
+            "value": "Mississippi"
+          },
+          {
+            "code": "MO",
+            "value": "Missouri"
+          },
+          {
+            "code": "MT",
+            "value": "Montana"
+          },
+          {
+            "code": "NE",
+            "value": "Nebraska"
+          },
+          {
+            "code": "NV",
+            "value": "Nevada"
+          },
+          {
+            "code": "NH",
+            "value": "NewHampshire"
+          },
+          {
+            "code": "NJ",
+            "value": "NewJersey"
+          },
+          {
+            "code": "NM",
+            "value": "NewMexico"
+          },
+          {
+            "code": "NY",
+            "value": "NewYork"
+          },
+          {
+            "code": "NC",
+            "value": "NorthCarolina"
+          },
+          {
+            "code": "ND",
+            "value": "NorthDakota"
+          },
+          {
+            "code": "OH",
+            "value": "Ohio"
+          },
+          {
+            "code": "OK",
+            "value": "Oklahoma"
+          },
+          {
+            "code": "OR",
+            "value": "Oregon"
+          },
+          {
+            "code": "PA",
+            "value": "Pennsylvania"
+          },
+          {
+            "code": "RI",
+            "value": "RhodeIsland"
+          },
+          {
+            "code": "SC",
+            "value": "SouthCarolina"
+          },
+          {
+            "code": "SD",
+            "value": "SouthDakota"
+          },
+          {
+            "code": "TN",
+            "value": "Tennessee"
+          },
+          {
+            "code": "TX",
+            "value": "Texas"
+          },
+          {
+            "code": "UT",
+            "value": "Utah"
+          },
+          {
+            "code": "VT",
+            "value": "Vermont"
+          },
+          {
+            "code": "VA",
+            "value": "Virginia"
+          },
+          {
+            "code": "WA",
+            "value": "Washington"
+          },
+          {
+            "code": "WV",
+            "value": "WestVirginia"
+          },
+          {
+            "code": "WI",
+            "value": "Wisconsin"
+          },
+          {
+            "code": "WY",
+            "value": "Wyoming"
+          }
+        ]
+      },
+      {
+        "countryCode": "GB",
+        "state": [
+          {
+            "code": "AR",
+            "value": "Aberdeen"
+          },
+          {
+            "code": "AS",
+            "value": "Aberdeenshire"
+          },
+          {
+            "code": "AY",
+            "value": "Anglesey"
+          },
+          {
+            "code": "AG",
+            "value": "Angus"
+          },
+          {
+            "code": "AN",
+            "value": "Antrim"
+          },
+          {
+            "code": "AD",
+            "value": "Ards"
+          },
+          {
+            "code": "AB",
+            "value": "Argyll And Bute"
+          },
+          {
+            "code": "AM",
+            "value": "Armagh"
+          },
+          {
+            "code": "BL",
+            "value": "Ballymena"
+          },
+          {
+            "code": "BY",
+            "value": "Ballymoney"
+          },
+          {
+            "code": "BB",
+            "value": "Banbridge"
+          },
+          {
+            "code": "BX",
+            "value": "Barnsley"
+          },
+          {
+            "code": "BN",
+            "value": "Bath And North East Somerset"
+          },
+          {
+            "code": "FO",
+            "value": "Bedford"
+          },
+          {
+            "code": "BF",
+            "value": "Belfast"
+          },
+          {
+            "code": "BI",
+            "value": "Birmingham"
+          },
+          {
+            "code": "BW",
+            "value": "Blackburn With Darwen"
+          },
+          {
+            "code": "BP",
+            "value": "Blackpool"
+          },
+          {
+            "code": "BG",
+            "value": "Blaenau Gwent"
+          },
+          {
+            "code": "BT",
+            "value": "Bolton"
+          },
+          {
+            "code": "BM",
+            "value": "Bournemouth"
+          },
+          {
+            "code": "BC",
+            "value": "Bracknell Forest"
+          },
+          {
+            "code": "BV",
+            "value": "Bradford"
+          },
+          {
+            "code": "BJ",
+            "value": "Bridgend"
+          },
+          {
+            "code": "BH",
+            "value": "Brighton And Hove"
+          },
+          {
+            "code": "BS",
+            "value": "Bristol"
+          },
+          {
+            "code": "BU",
+            "value": "Buckinghamshire"
+          },
+          {
+            "code": "BR",
+            "value": "Bury"
+          },
+          {
+            "code": "CP",
+            "value": "Caerphilly"
+          },
+          {
+            "code": "CX",
+            "value": "Calderdale"
+          },
+          {
+            "code": "CM",
+            "value": "Cambridgeshire"
+          },
+          {
+            "code": "CA",
+            "value": "Cardiff"
+          },
+          {
+            "code": "CI",
+            "value": "Carmarthenshire"
+          },
+          {
+            "code": "CF",
+            "value": "Carrickfergus"
+          },
+          {
+            "code": "CS",
+            "value": "Castlereagh"
+          },
+          {
+            "code": "CB",
+            "value": "Central Bedfordshire"
+          },
+          {
+            "code": "CG",
+            "value": "Ceredigion"
+          },
+          {
+            "code": "CQ",
+            "value": "Cheshire East"
+          },
+          {
+            "code": "CZ",
+            "value": "Cheshire West And Chester"
+          },
+          {
+            "code": "CC",
+            "value": "Clackmannanshire"
+          },
+          {
+            "code": "CL",
+            "value": "Coleraine"
+          },
+          {
+            "code": "CW",
+            "value": "Conwy"
+          },
+          {
+            "code": "CK",
+            "value": "Cookstown"
+          },
+          {
+            "code": "CO",
+            "value": "Cornwall"
+          },
+          {
+            "code": "CT",
+            "value": "Coventry"
+          },
+          {
+            "code": "CR",
+            "value": "Craigavon"
+          },
+          {
+            "code": "CU",
+            "value": "Cumbria"
+          },
+          {
+            "code": "DA",
+            "value": "Darlington"
+          },
+          {
+            "code": "DI",
+            "value": "Denbighshire"
+          },
+          {
+            "code": "DE",
+            "value": "Derby"
+          },
+          {
+            "code": "DB",
+            "value": "Derbyshire"
+          },
+          {
+            "code": "LD",
+            "value": "Derry"
+          },
+          {
+            "code": "DO",
+            "value": "Devon"
+          },
+          {
+            "code": "DC",
+            "value": "Doncaster"
+          },
+          {
+            "code": "DS",
+            "value": "Dorset"
+          },
+          {
+            "code": "DW",
+            "value": "Down"
+          },
+          {
+            "code": "DY",
+            "value": "Dudley"
+          },
+          {
+            "code": "DG",
+            "value": "Dumfries And Galloway"
+          },
+          {
+            "code": "DU",
+            "value": "Dundee"
+          },
+          {
+            "code": "DN",
+            "value": "Dungannon"
+          },
+          {
+            "code": "DH",
+            "value": "Durham"
+          },
+          {
+            "code": "EA",
+            "value": "East Ayrshire"
+          },
+          {
+            "code": "ED",
+            "value": "East Dunbartonshire"
+          },
+          {
+            "code": "EL",
+            "value": "East Lothian"
+          },
+          {
+            "code": "ER",
+            "value": "East Renfrewshire"
+          },
+          {
+            "code": "EY",
+            "value": "East RidingOfYorkshire"
+          },
+          {
+            "code": "ES",
+            "value": "East Sussex"
+          },
+          {
+            "code": "EB",
+            "value": "Edinburgh"
+          },
+          {
+            "code": "WI",
+            "value": "Eilean Siar"
+          },
+          {
+            "code": "EX",
+            "value": "Essex"
+          },
+          {
+            "code": "FK",
+            "value": "Falkirk"
+          },
+          {
+            "code": "FE",
+            "value": "Fermanagh"
+          },
+          {
+            "code": "FI",
+            "value": "Fife"
+          },
+          {
+            "code": "FL",
+            "value": "Flintshire"
+          },
+          {
+            "code": "GH",
+            "value": "Gateshead"
+          },
+          {
+            "code": "GG",
+            "value": "Glasgow"
+          },
+          {
+            "code": "GC",
+            "value": "Gloucestershire"
+          },
+          {
+            "code": "GL",
+            "value": "GreaterLondon"
+          },
+          {
+            "code": "GD",
+            "value": "Gwynedd"
+          },
+          {
+            "code": "HL",
+            "value": "Halton"
+          },
+          {
+            "code": "HA",
+            "value": "Hampshire"
+          },
+          {
+            "code": "HP",
+            "value": "Hartlepool"
+          },
+          {
+            "code": "HE",
+            "value": "Herefordshire"
+          },
+          {
+            "code": "HT",
+            "value": "Hertfordshire"
+          },
+          {
+            "code": "HI",
+            "value": "Highland"
+          },
+          {
+            "code": "IC",
+            "value": "Inverclyde"
+          },
+          {
+            "code": "IW",
+            "value": "Isle Of Wight"
+          },
+          {
+            "code": "IS",
+            "value": "Isles Of Scilly"
+          },
+          {
+            "code": "KE",
+            "value": "Kent"
+          },
+          {
+            "code": "KH",
+            "value": "Kingston Upon Hull"
+          },
+          {
+            "code": "KK",
+            "value": "Kirklees"
+          },
+          {
+            "code": "KN",
+            "value": "Knowsley"
+          },
+          {
+            "code": "LA",
+            "value": "Lancashire"
+          },
+          {
+            "code": "LR",
+            "value": "Larne"
+          },
+          {
+            "code": "LS",
+            "value": "Leeds"
+          },
+          {
+            "code": "LC",
+            "value": "Leicester"
+          },
+          {
+            "code": "LE",
+            "value": "Leicestershire"
+          },
+          {
+            "code": "LM",
+            "value": "Limavady"
+          },
+          {
+            "code": "LI",
+            "value": "Lincolnshire"
+          },
+          {
+            "code": "LB",
+            "value": "Lisburn"
+          },
+          {
+            "code": "LV",
+            "value": "Liverpool"
+          },
+          {
+            "code": "LU",
+            "value": "Luton"
+          },
+          {
+            "code": "MF",
+            "value": "Magherafelt"
+          },
+          {
+            "code": "MN",
+            "value": "Manchester"
+          },
+          {
+            "code": "MW",
+            "value": "Medway"
+          },
+          {
+            "code": "MT",
+            "value": "Merthyr Tydfil"
+          },
+          {
+            "code": "MB",
+            "value": "Middlesbrough"
+          },
+          {
+            "code": "ML",
+            "value": "Midlothian"
+          },
+          {
+            "code": "MK",
+            "value": "Milton Keynes"
+          },
+          {
+            "code": "MM",
+            "value": "Monmouthshire"
+          },
+          {
+            "code": "MO",
+            "value": "Moray"
+          },
+          {
+            "code": "MY",
+            "value": "Moyle"
+          },
+          {
+            "code": "NP",
+            "value": "Neath Port Talbot"
+          },
+          {
+            "code": "NU",
+            "value": "Newcastle Upon Tyne"
+          },
+          {
+            "code": "NO",
+            "value": "Newport"
+          },
+          {
+            "code": "NM",
+            "value": "Newry And Mourne"
+          },
+          {
+            "code": "NW",
+            "value": "Newtownabbey"
+          },
+          {
+            "code": "NF",
+            "value": "Norfolk"
+          },
+          {
+            "code": "NA",
+            "value": "Northamptonshire"
+          },
+          {
+            "code": "NR",
+            "value": "North Ayrshire"
+          },
+          {
+            "code": "ND",
+            "value": "North Down"
+          },
+          {
+            "code": "NE",
+            "value": "North East Lincolnshire"
+          },
+          {
+            "code": "NN",
+            "value": "North Lanarkshire"
+          },
+          {
+            "code": "NL",
+            "value": "North Lincolnshire"
+          },
+          {
+            "code": "NS",
+            "value": "North Somerset"
+          },
+          {
+            "code": "NI",
+            "value": "North Tyneside"
+          },
+          {
+            "code": "NB",
+            "value": "Northumberland"
+          },
+          {
+            "code": "NY",
+            "value": "North Yorkshire"
+          },
+          {
+            "code": "NG",
+            "value": "Nottingham"
+          },
+          {
+            "code": "NT",
+            "value": "Nottinghamshire"
+          },
+          {
+            "code": "OL",
+            "value": "Oldham"
+          },
+          {
+            "code": "OM",
+            "value": "Omagh"
+          },
+          {
+            "code": "OR",
+            "value": "Orkney Islands"
+          },
+          {
+            "code": "OX",
+            "value": "Oxfordshire"
+          },
+          {
+            "code": "PE",
+            "value": "Pembrokeshire"
+          },
+          {
+            "code": "PK",
+            "value": "Perthshire And Kinross"
+          },
+          {
+            "code": "PB",
+            "value": "Peterborough"
+          },
+          {
+            "code": "PM",
+            "value": "Plymouth"
+          },
+          {
+            "code": "PL",
+            "value": "Poole"
+          },
+          {
+            "code": "PS",
+            "value": "Portsmouth"
+          },
+          {
+            "code": "PO",
+            "value": "Powys"
+          },
+          {
+            "code": "RG",
+            "value": "Reading"
+          },
+          {
+            "code": "RC",
+            "value": "Redcar And Cleveland"
+          },
+          {
+            "code": "RF",
+            "value": "Renfrewshire"
+          },
+          {
+            "code": "RT",
+            "value": "Rhondda CynonTaff"
+          },
+          {
+            "code": "RD",
+            "value": "Rochdale"
+          },
+          {
+            "code": "RH",
+            "value": "Rotherham"
+          },
+          {
+            "code": "RL",
+            "value": "Rutland"
+          },
+          {
+            "code": "SZ",
+            "value": "Saint Helens"
+          },
+          {
+            "code": "ZF",
+            "value": "Salford"
+          },
+          {
+            "code": "ZW",
+            "value": "Sandwell"
+          },
+          {
+            "code": "BO",
+            "value": "Scottish Borders"
+          },
+          {
+            "code": "SE",
+            "value": "Sefton"
+          },
+          {
+            "code": "SV",
+            "value": "Sheffield"
+          },
+          {
+            "code": "SH",
+            "value": "Shetland Islands"
+          },
+          {
+            "code": "SP",
+            "value": "Shropshire"
+          },
+          {
+            "code": "ZL",
+            "value": "Slough"
+          },
+          {
+            "code": "SI",
+            "value": "Solihull"
+          },
+          {
+            "code": "SM",
+            "value": "Somerset"
+          },
+          {
+            "code": "ZH",
+            "value": "Southampton"
+          },
+          {
+            "code": "SA",
+            "value": "South Ayrshire"
+          },
+          {
+            "code": "SS",
+            "value": "Southend-on-Sea"
+          },
+          {
+            "code": "SJ",
+            "value": "South Gloucestershire"
+          },
+          {
+            "code": "SL",
+            "value": "South Lanarkshire"
+          },
+          {
+            "code": "SX",
+            "value": "South Tyneside"
+          },
+          {
+            "code": "ST",
+            "value": "Staffordshire"
+          },
+          {
+            "code": "ZG",
+            "value": "Stirling"
+          },
+          {
+            "code": "SK",
+            "value": "Stockport"
+          },
+          {
+            "code": "ZT",
+            "value": "Stockton-on-Tees"
+          },
+          {
+            "code": "SO",
+            "value": "Stoke-on-Trent"
+          },
+          {
+            "code": "SB",
+            "value": "Strabane"
+          },
+          {
+            "code": "SF",
+            "value": "Suffolk"
+          },
+          {
+            "code": "SD",
+            "value": "Sunderland"
+          },
+          {
+            "code": "SR",
+            "value": "Surrey"
+          },
+          {
+            "code": "SW",
+            "value": "Swansea"
+          },
+          {
+            "code": "SN",
+            "value": "Swindon"
+          },
+          {
+            "code": "TM",
+            "value": "Tameside"
+          },
+          {
+            "code": "TK",
+            "value": "Telford And Wrekin"
+          },
+          {
+            "code": "TR",
+            "value": "Thurrock"
+          },
+          {
+            "code": "TB",
+            "value": "Torbay"
+          },
+          {
+            "code": "TF",
+            "value": "Torfaen"
+          },
+          {
+            "code": "TD",
+            "value": "Trafford"
+          },
+          {
+            "code": "VG",
+            "value": "Vale Of Glamorgan"
+          },
+          {
+            "code": "WK",
+            "value": "Wakefield"
+          },
+          {
+            "code": "WZ",
+            "value": "Walsall"
+          },
+          {
+            "code": "WT",
+            "value": "Warrington"
+          },
+          {
+            "code": "WR",
+            "value": "Warwickshire"
+          },
+          {
+            "code": "WB",
+            "value": "West Berkshire"
+          },
+          {
+            "code": "WD",
+            "value": "West Dunbartonshire"
+          },
+          {
+            "code": "WH",
+            "value": "West Lothian"
+          },
+          {
+            "code": "WS",
+            "value": "West Sussex"
+          },
+          {
+            "code": "WN",
+            "value": "Wigan"
+          },
+          {
+            "code": "WL",
+            "value": "Wiltshire"
+          },
+          {
+            "code": "WA",
+            "value": "Windsor And Maidenhead"
+          },
+          {
+            "code": "WQ",
+            "value": "Wirral"
+          },
+          {
+            "code": "WO",
+            "value": "Wokingham"
+          },
+          {
+            "code": "WV",
+            "value": "Wolverhampton"
+          },
+          {
+            "code": "WC",
+            "value": "Worcestershire"
+          },
+          {
+            "code": "WX",
+            "value": "Wrexham"
+          },
+          {
+            "code": "YK",
+            "value": "York"
+          }
+        ]
+      }
+    ]
+  }
+}

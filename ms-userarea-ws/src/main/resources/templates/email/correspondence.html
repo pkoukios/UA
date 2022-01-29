@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p th:utext="#{email.correspondence.start(${recipient})}"></p>
+<p th:utext="#{email.correspondence.received(${ipo})}"></p>
+<p> <span th:text="#{email.correspondence.click}"></span>
+    <a th:href="#{email.correspondence.url(${url})}">
+    <span th:text="#{email.correspondence.ref}"></span></a>
+</p>
+<p th:utext="#{email.correspondence.greeting}"></p>
+<p th:utext="#{email.correspondence.end(${ipo})}"></p>
+</body>
+</html>

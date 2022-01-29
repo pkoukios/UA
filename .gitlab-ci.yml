@@ -1,0 +1,101 @@
+###################################################################################
+# VARIABLE Definitions
+###################################################################################
+variables:
+  # These values can be adjusted to suit your specific pipeline behaviour
+  DOCKER_REGISTRY: "ccvli-ecp610:5000"
+
+  # choose to skip (true) or execute (false) specific jobs
+  SKIP_BUILD: "false"
+  SKIP_TEST: "false"
+  GIT_SSL_NO_VERIFY: "1"
+
+  SONAR_URL: "http://sonarqube/"
+
+  DEPLOYMENT_SSH_COMMAND: "ssh -oStrictHostKeyChecking=no -i /home/gitlab-runner/.ssh/id_rsa_ecp613"
+  DEPLOYMENT_HOST: "to be defined"
+  DEPLOYMENT_USER: "user"
+
+###################################################################################
+# STAGE Definitions
+###################################################################################
+stages:
+  - build
+  - test
+  - quality
+  - deploy
+
+###################################################################################
+# JOB Definitions
+###################################################################################
+build_application:
+  stage: build
+  script:
+    - if [[ "${SKIP_BUILD}" = "true" ]] ; then echo "SKIP_BUILD property is true, skipping job" && exit 0 ; fi
+    - mvn clean install -U
+
+test:
+  stage: test
+  script:
+    - if [[ "${SKIP_TEST}" = "true" ]] ; then echo "SKIP_TEST property is true, skipping job" && exit 0 ; fi
+    - mvn clean verify
+
+build_image:
+  stage: deploy
+  when: manual
+  script:
+    - export DOCKER_HOST="tcp://localhost:2375"
+    - mvn clean install -U
+    - cd ms-userarea-ws
+    - mvn -Dmaven.test.skip=true docker:build docker:push -DpushImageTag -Ddocker.registry=$DOCKER_REGISTRY
+
+sonar-master:
+  stage: quality
+  only:
+    - master
+  script:
+    - if [[ "${SKIP_QUALITY}" = "true" ]] ; then echo "SKIP_QUALITY property is true, skipping job" && exit 0 ; fi
+    - mvn -B -U clean verify sonar:sonar
+      -Dmaven.test.skip=false
+      -Dmaven.test.failure.ignore=true
+      -Dsonar.host.url=$SONAR_URL
+      -Dsonar.login=$SONAR_ACCESS_TOKEN
+
+sonar-other:
+  stage: quality
+  only:
+    - branches
+  when: manual
+  script:
+    - if [[ "${SKIP_QUALITY}" = "true" ]] ; then echo "SKIP_QUALITY property is true, skipping job" && exit 0 ; fi
+    - mvn -B -U clean verify sonar:sonar
+      -Dmaven.test.skip=false
+      -Dmaven.test.failure.ignore=true
+      -Dsonar.host.url=$SONAR_URL
+      -Dsonar.login=$SONAR_ACCESS_TOKEN
+      -Dsonar.branch.name=$CI_COMMIT_REF_NAME
+
+.deploy_template: &deploy_definition
+  stage: deploy
+  when: manual
+  script:
+    - export DOCKER_HOST="tcp://localhost:2375"
+    - mvn clean install -U -Dmaven.test.skip=true
+    - export RELEASE_VERSION="$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive org.codehaus.mojo:exec-maven-plugin:1.3.2:exec)"
+    - $DEPLOYMENT_SSH_COMMAND $DEPLOYMENT_USER@$DEPLOYMENT_HOST "DOCKER_HOST=tcp://localhost:2375 docker stop userarea-backend || true"
+    - $DEPLOYMENT_SSH_COMMAND $DEPLOYMENT_USER@$DEPLOYMENT_HOST "DOCKER_HOST=tcp://localhost:2375 docker pull $DOCKER_REGISTRY/userarea/ms-userarea:$RELEASE_VERSION"
+    - $DEPLOYMENT_SSH_COMMAND $DEPLOYMENT_USER@$DEPLOYMENT_HOST "
+      DOCKER_HOST=tcp://localhost:2375
+      docker run -d --rm --name userarea-backend
+      -e SPRING_CLOUD_CONFIG_ENABLED=false
+      --net=host --health-cmd 'curl --fail --silent localhost:7001/actuator/health 2>&1 | grep UP || exit 1'
+      --health-interval=20s --health-timeout=5s --health-retries=5
+      --health-start-period=40s $DOCKER_REGISTRY/userarea/ms-userarea:$RELEASE_VERSION"
+
+deploy_ccvli-ecp613:
+  <<: *deploy_definition
+  environment:
+    name: ccvli-ecp613
+    url: "https://ccvli-ecp613/"
+  variables:
+    DEPLOYMENT_HOST: "ccvli-ecp613"

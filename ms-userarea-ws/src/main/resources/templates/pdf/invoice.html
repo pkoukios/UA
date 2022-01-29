@@ -1,0 +1,136 @@
+<!--
+  ~ $Id:: invoice.html 2021/05/12 10:59 dvelegra
+  ~
+  ~        . * .
+  ~      * RRRR  *   Copyright (c) 2012-2021 EUIPO: European Intellectual
+  ~     .  RR  R  .  Property Organization (trademarks and designs).
+  ~     *  RRR    *
+  ~      . RR RR .   ALL RIGHTS RESERVED
+  ~       *. _ .*
+  ~
+  ~  The use and distribution of this software is under the restrictions exposed in 'license.txt'
+  -->
+
+<!DOCTYPE html>
+<html lang="en-us" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Invoice</title>
+  <meta name="subject" content="Invoice"/>
+  <meta name="author" content="User Area"/>
+  <meta name="description" content="Invoice - Payment details"/>
+  
+  <bookmarks>
+   <bookmark name="Payment Details" href="#details"></bookmark>
+   <bookmark name="Applications Details" href="#table-details"></bookmark>
+   <bookmark name="Payment Reference" href="#payment-reference"></bookmark>
+   <bookmark name="Summary" href="#summary"></bookmark>
+  </bookmarks>
+    
+  <style>
+  @page {
+    margin: 30px 20px;
+  }
+  body {
+    width: 100%;
+    margin: 0;
+    font-family: 'TestFont'; /* Font provided with builder. */
+    font-size: 15px;
+    line-height: 150%;
+    letter-spacing: 1.8px; /* 0.12 * font-size */
+    word-spacing: 2.4px; /* 0.16 * font-size */
+  }
+  .detail {
+    margin-top: 10px;
+  }
+  .detailsLabel {
+    color: #171C26;
+    font-weight: 600;
+  }
+  th, td {
+  padding: 10px;
+  text-align: left;
+  }
+  table {
+      width: 100%;
+      color: #303233;
+      border-collapse: collapse;
+  }
+  thead {
+      background-color: #ECEFF1 ;
+  }
+  tbody tr {
+      border-bottom: 1px solid #303233;
+      height: 30px;
+  }
+  td {
+    max-width: 150px;
+
+  }
+</style>
+</head>
+<body>
+ <h1 id="title">Payment Details</h1>
+ <div id="details" style="width: 100% !important; margin: 30px 0;">
+     <div style="width: 50% !important;">
+        <div class="detail">
+            <div class="detailsLabel">PAYMENT ID</div>
+            <div class="detailsValue" th:text="${data.paymentId}"></div>
+        </div>
+        <div class="detail">
+            <div class="detailsLabel">PAYMENT DATE</div>
+            <div class="detailsValue" th:text="${data.paymentDate}"></div>
+        </div>
+        <div class="detail">
+            <div class="detailsLabel">PAYMENT TIME</div>
+            <div class="detailsValue" th:text="${data.paymentTime}"></div>
+        </div>
+    </div>
+     <div style="width: 50% !important;">
+         <div class="detail">
+             <div class="detailsLabel">TRANSACTION ID</div>
+             <div class="detailsValue" th:text="${data.transactionId}"></div>
+         </div>
+        <div class="detail">
+            <div class="detailsLabel">PAYMENT METHOD</div>
+            <div class="detailsValue" th:text="${data.paymentMethod}"></div>
+        </div>
+         <div class="detail">
+             <div class="detailsLabel">PAID BY</div>
+             <div class="detailsValue" th:text="${data.paidBy}"></div>
+         </div>
+     </div>
+ </div>
+
+<table id="table-details" style="margin: 30px 0;">
+  <thead>
+    <tr>
+        <th>Type</th>
+        <th>Application #</th>
+        <th>Applicants</th>
+        <th>Representatives</th>
+        <th>Cost</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="item : ${data.applications}">
+      <td th:text="${item.type}"></td>
+      <td th:text="${item.number}"></td>
+      <td th:text="${item.applicant}"></td>
+      <td th:text="${item.representative}"></td>
+      <td th:text="${item.fees}"></td>
+  </tr>
+  </tbody>
+</table>
+
+<div  id="payment-reference" class="detail">
+  <div class="detailsLabel">Payment Reference</div>
+  <div class="detailsValue" th:text="${data.paymentReference}"></div>
+</div>
+
+<div id="summary" style="font-weight: 600; margin-top: 30px;">
+  <div style="margin-bottom: 15px;">Number of Applications <span style="padding-left: 10px;" th:text="${data.numberOfApplications}"></span></div>
+  <div>TOTAL COST <span style="padding-left: 10px;" th:text="${data.total}"></span></div>
+</div>
+
+</body>
+</html>

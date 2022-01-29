@@ -1,0 +1,215 @@
+{
+  "ipRightTypes": [
+    {
+      "key": "Trademarks",
+      "label": "trademarks"
+    },
+    {
+      "key": "Designs",
+      "label": "designs"
+    }
+  ],
+  "tmFilteringTypes": [
+    {
+      "key": "TM_RENEWAL",
+      "value": "TM Renewal",
+      "label": "eservice.tm.renewal"
+    },
+    {
+      "key": "TM_TRANSFER",
+      "value": "TM Transfer",
+      "label": "eservice.tm.transfer"
+    },
+    {
+      "key": "TM_CHANGE",
+      "value": "TM Change Owner details",
+      "label": "eservice.tm.change"
+    },
+    {
+      "key": "TM_CHANGEREP",
+      "value": "TM Change Rep/Corr details",
+      "label": "eservice.tm.change.rep"
+    },
+    {
+      "key": "TM_GENERIC",
+      "value": "TM Generic",
+      "label": "eservice.tm.generic"
+    },
+    {
+      "key": "TM_INVALIDITY",
+      "value": "TM Invalidity",
+      "label": "eservice.tm.invalidity"
+    },
+    {
+      "key": "TM_LICENCE",
+      "value": "TM Licence Contract",
+      "label": "eservice.tm.licence"
+    },
+    {
+      "key": "TM_REM",
+      "value": "TM Rights in rem",
+      "label": "eservice.tm.rem"
+    },
+    {
+      "key": "TM_OPPOSITION",
+      "value": "TM Opposition",
+      "label": "eservice.tm.opposition"
+    },
+    {
+      "key": "TM_REVOCATION",
+      "value": "TM Revocation",
+      "label": "eservice.tm.revocation"
+    },
+    {
+      "key": "TM_OBJECTION",
+      "value": "TM Objection",
+      "label": "eservice.tm.objection"
+    },
+    {
+      "key": "TM_WITHDRAWAL",
+      "value": "TM Withdrawal/Surrender",
+      "label": "eservice.tm.withdrawal"
+    },
+    {
+      "key": "TM_LIMITATION",
+      "value": "TM Limit G&S",
+      "label": "eservice.tm.limitation"
+    }
+  ],
+  "dsFilteringTypes": [
+    {
+      "key": "DS_RENEWAL",
+      "value": "DS Renewal",
+      "label": "eservice.ds.renewal"
+    },
+    {
+      "key": "DS_TRANSFER",
+      "value": "DS Transfer",
+      "label": "eservice.ds.transfer"
+    },
+    {
+      "key": "DS_CHANGE",
+      "value": "DS Change Owner details",
+      "label": "eservice.ds.change"
+    },
+    {
+      "key": "DS_CHANGEREP",
+      "value": "DS Change Rep/Corr details",
+      "label": "eservice.ds.change.rep"
+    },
+    {
+      "key": "DS_GENERIC",
+      "value": "DS Generic",
+      "label": "eservice.ds.generic"
+    },
+    {
+      "key": "DS_INVALIDITY",
+      "value": "DS Invalidity",
+      "label": "eservice.ds.invalidity"
+    },
+    {
+      "key": "DS_LICENCE",
+      "value": "DS Licence Contract",
+      "label": "eservice.ds.licence"
+    },
+    {
+      "key": "DS_REM",
+      "value": "DS Rights in rem",
+      "label": "eservice.ds.rem"
+    }
+  ],
+  "statuses": [
+    {
+      "key": "Submitted",
+      "label": "status.submitted"
+    }
+  ],
+  "dates": [
+    {
+      "key": "applicationDate",
+      "label": "date.application"
+    },
+    {
+      "key": "statusDate",
+      "label": "date.status"
+    }
+  ],
+  "draftDates": [
+    {
+      "key": "creationDate",
+      "label": "date.creation"
+    },
+    {
+      "key": "lastModifiedDate",
+      "label": "date.last.modified"
+    }
+  ],
+  "tmInitiatingTypes": [
+    {
+      "key": "TM_RENEWAL",
+      "label": "eservice.tm.renewal"
+    },
+    {
+      "key": "TM_TRANSFER",
+      "label": "eservice.tm.transfer"
+    },
+    {
+      "key": "TM_CHANGE",
+      "label": "eservice.tm.change"
+    },
+    {
+      "key": "TM_CHANGEREP",
+      "label": "eservice.tm.change.rep"
+    },
+    {
+      "key": "TM_GENERIC",
+      "label": "eservice.tm.generic"
+    },
+    {
+      "key": "TM_LICENCE",
+      "label": "eservice.tm.licence"
+    },
+    {
+      "key": "TM_REM",
+      "label": "eservice.tm.rem"
+    },
+    {
+      "key": "TM_WITHDRAWAL",
+      "label": "eservice.tm.withdrawal"
+    },
+    {
+      "key": "TM_LIMITATION",
+      "label": "eservice.tm.limitation"
+    }
+  ],
+  "dsInitiatingTypes": [
+    {
+      "key": "DS_RENEWAL",
+      "label": "eservice.ds.renewal"
+    },
+    {
+      "key": "DS_TRANSFER",
+      "label": "eservice.ds.transfer"
+    },
+    {
+      "key": "DS_CHANGE",
+      "label": "eservice.ds.change"
+    },
+    {
+      "key": "DS_CHANGEREP",
+      "label": "eservice.ds.change.rep"
+    },
+    {
+      "key": "DS_GENERIC",
+      "label": "eservice.ds.generic"
+    },
+    {
+      "key": "DS_LICENCE",
+      "label": "eservice.ds.licence"
+    },
+    {
+      "key": "DS_REM",
+      "label": "eservice.ds.rem"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "types": [
+    {
+      "key": "Word",
+      "label": "tm.type.word"
+    },
+    {
+      "key": "Figurative",
+      "label": "tm.type.figurative"
+    },
+    {
+      "key": "Combined",
+      "label": "tm.type.figurative.with.words"
+    },
+    {
+      "key": "3-D",
+      "label": "tm.type.shape"
+    },
+    {
+      "key": "Colour",
+      "label": "tm.type.colour"
+    },
+    {
+      "key": "Sound",
+      "label": "tm.type.sound"
+    },
+    {
+      "key": "Other",
+      "label": "tm.type.other"
+    },
+    {
+      "key": "Stylized characters",
+      "label": "tm.type.shape.with.words"
+    },
+    {
+      "key": "Hologram",
+      "label": "tm.type.hologram"
+    },
+    {
+      "key": "Position",
+      "label": "tm.type.position"
+    },
+    {
+      "key": "Pattern",
+      "label": "tm.type.pattern"
+    },
+    {
+      "key": "Motion",
+      "label": "tm.type.motion"
+    },
+    {
+      "key": "Multimedia",
+      "label": "tm.type.multimedia"
+    }
+  ],
+  "kinds": [
+    {
+      "key": "Individual",
+      "label": "tm.kind.individual"
+    },
+    {
+      "key": "Collective",
+      "label": "tm.kind.collective"
+    },
+    {
+      "key": "Certification",
+      "label": "tm.kind.certification"
+    }
+  ],
+  "statuses": [
+    {
+      "key": "Submitted",
+      "label": "status.submitted"
+    },
+    {
+      "key": "Expired",
+      "label": "status.expired"
+    },
+    {
+      "key": "Registered",
+      "label": "status.registered"
+    },
+    {
+      "key": "Ended",
+      "label": "status.ended"
+    }
+  ],
+  "dates": [
+    {
+      "key": "applicationDate",
+      "label": "date.application"
+    },
+    {
+      "key": "registrationDate",
+      "label": "date.registration"
+    },
+    {
+      "key": "statusDate",
+      "label": "date.status"
+    },
+    {
+      "key": "publicationDate",
+      "label": "date.publication"
+    }
+  ],
+  "draftDates": [
+    {
+      "key": "creationDate",
+      "label": "date.creation"
+    },
+    {
+      "key": "lastModifiedDate",
+      "label": "date.last.modified"
+    }
+  ]
+}

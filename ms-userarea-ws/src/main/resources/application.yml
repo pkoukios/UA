@@ -1,0 +1,444 @@
+server:
+  port: 7001
+  servlet.session:
+    timeout: 3600
+    cookie.name: JSESSIONID_UAB
+    cookie.path: /
+    cookie.http-only: false
+    secure: true
+
+spring:
+
+  security:
+    ory-hydra-endpoint: https://ua-local.dev/oryhydra-private
+    ory-hydra-timeout: 3600
+    oauth2:
+      client:
+        registration:
+          userarea:
+            provider: ory-hydra
+            client-id: userarea
+            client-secret: secret
+            authorization-grant-type: authorization_code
+            redirect-uri: https://ua-local.dev/backend/login/oauth2/code/{registrationId}
+            redirect-base-uri: /login/oauth2/code/userarea
+            default-success-uri: https://ua-local.dev
+            scope: openid,offline
+        provider:
+          ory-hydra:
+            issuer-uri: https://ua-local.dev/oryhydra/
+      resourceserver:
+        opaque:
+          introspection-uri: https://ua-local.dev/oryhydra-private/oauth2/introspect
+          introspection-client-id: userarea
+          introspection-client-secret: secret
+
+  datasource:
+    url: jdbc:mariadb://localhost:3308/userarea
+    username: userarea
+    password: userarea
+    driver-class-name: org.mariadb.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      dialect: org.hibernate.dialect.MariaDBDialect
+
+  redis:
+    host: localhost
+    port: 6379
+
+  session:
+    store-type: redis
+    redis:
+      flush-mode: on_save
+      namespace: spring:session
+
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 2MB
+
+  mail:
+    host: localhost
+    port: 1025
+    protocol: smtp
+    defaultEncoding: UTF-8
+
+jms:
+  activemq:
+    connection.factory: jms/RemoteConnectionFactory
+    context.factory: org.wildfly.naming.client.WildFlyInitialContextFactory
+    broker-url: http-remoting://euipo405.am.intrasoft-euipo.int:8080
+    user: fsp
+    password: 123456
+    listen.message.queue: jms/queue/userAreaSendMessageQueue
+    produce.message.queue:
+    produce.notification.queue:
+
+userarea:
+  globals:
+    ipo:
+      version: ${project.version}
+      recaptchaKey: 6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI
+      url: https://ua-local.dev
+      logout.url: https://ua-local.dev/backend/logout
+      login.redirect.url: https://ua-local.dev/backend/oauth2/authorization/userarea
+      login.challenge.url: https://ua-local.dev/login/oauth2/challenge
+      reset.url: https://ua-local.dev/reset/token/
+      registration.url: https://ua-local.dev/registration/token/
+      child.registration.url: https://ua-local.dev/child/registration/token/
+      name: EUIPO
+      email: euipo@euipo.eu
+      address: Avenida de Europa, 4 E-03008 Alicante (Spain)
+      phone: +34965139100
+      code: EM
+      fo.url: https://ua-local.dev/
+      tm.efiling.url: sp-ui-tmefiling/wizard.htm
+      tm.renewal.url: sp-ui-eservices/tm-renewal.htm
+      tm.transfer.url: sp-ui-eservices/tm-transfer.htm
+      tm.change.url: sp-ui-eservices/tm-change.htm
+      tm.changerep.url: sp-ui-eservices/tm-changerep.htm
+      tm.generic.url: sp-ui-eservices/tm-generic.htm
+      tm.invalidity.url: sp-ui-eservices/tm-invalidity.htm
+      tm.licence.url: sp-ui-eservices/tm-licence.htm
+      tm.rem.url: sp-ui-eservices/tm-rem.htm
+      tm.opposition.url: sp-ui-eservices/tm-opposition.htm
+      tm.revocation.url: sp-ui-eservices/tm-revocation.htm
+      tm.objection.url: sp-ui-eservices/tm-objection.htm
+      tm.withdrawal.url: sp-ui-eservices/tm-withdrawal.htm
+      tm.limitation.url: sp-ui-eservices/tm-limitation.htm
+      ds.efiling.url: sp-ui-dsefiling/wizard.htm
+      ds.renewal.url: sp-ui-eservices/ds-renewal.htm
+      ds.transfer.url: sp-ui-eservices/ds-transfer.htm
+      ds.change.url: sp-ui-eservices/ds-change.htm
+      ds.changerep.url: sp-ui-eservices/ds-changerep.htm
+      ds.generic.url: sp-ui-eservices/ds-generic.htm
+      ds.invalidity.url: sp-ui-eservices/ds-invalidity.htm
+      ds.licence.url: sp-ui-eservices/ds-licence.htm
+      ds.rem.url: sp-ui-eservices/ds-rem.htm
+      search.trademark.url: https://www.tmdn.org/tmview/
+      search.design.url: https://www.tmdn.org/tmdsview-web/
+
+    language:
+      - code: en
+        name: English
+        value: English
+      - code: el
+        name: Greek
+        value: Ελληνικά
+
+    header:
+      - text: About the Network
+        link: https://www.tmdn.org/network/what_is_europeantmdn
+      - text: Members
+        link: https://www.tmdn.org/network/who_is_participating
+      - text: Tools
+        link: https://www.tmdn.org/network/iptools
+      - text: Practices
+        link: https://www.tmdn.org/network/converging-practices
+
+    footer:
+      - text: About the Network
+        link: https://www.tmdn.org/network/what_is_europeantmdn
+      - text: Who is participating?
+        link: https://www.tmdn.org/network/who_is_participating
+      - text: IP Tools
+        link: https://www.tmdn.org/network/iptools
+      - text: Convergence of Practices
+        link: https://www.tmdn.org/network/converging-practices
+
+    application:
+      note.max-length: 140
+      correspondence.maxReplies: 5
+      correspondence.autosave: 120
+      correspondence.expiration.period: 172800
+
+  synchronization:
+    enabled: false
+    trademark.cron.expression: '0 0 23 * * FRI'
+    design.cron.expression: '0 0 23 * * FRI'
+    eservice.cron.expression: '0 0 23 * * FRI'
+    tmview.trademark.search.url: https://cg.am.intrasoft-euipo.int/tmview-ui/trademark/search?an={0}&oc={1}
+    tmview.trademark.data.url: https://cg.am.intrasoft-euipo.int/tmview-ui/trademark/data/{0}
+    tmview.trademark.applicant.url: https://cg.am.intrasoft-euipo.int/tmview-ui/trademark/applicant/{0}/{1}
+    tmview.trademark.representative.url: https://cg.am.intrasoft-euipo.int/tmview-ui/trademark/representative/{0}/{1}
+    tmview.trademark.image.url: https://cg.am.intrasoft-euipo.int/tmview-ui/trademark/image/{0}
+    tmview.trademark.thumbnail.url: https://cg.am.intrasoft-euipo.int/tmview-ui/trademark/thumbnail/{0}
+    tmview.path:
+      trademark: Transaction,TradeMarkTransactionBody,TransactionContentDetails,TransactionData,TradeMarkDetails
+      applicant: Transaction,TradeMarkTransactionBody,TransactionContentDetails,TransactionData,ApplicantDetails,Applicant,ApplicantAddressBook,FormattedNameAddress,Name
+      representative: Transaction,TradeMarkTransactionBody,TransactionContentDetails,TransactionData,RepresentativeDetails,Representative,RepresentativeAddressBook,FormattedNameAddress,Name
+    dsview.search.url: https://cg.am.intrasoft-euipo.int/tmdsview-web/design/search?an={0}&oc={1}
+    dsview.data.url: https://cg.am.intrasoft-euipo.int/tmdsview-web/design/data/{0}
+    dsview.applicant.url: https://cg.am.intrasoft-euipo.int/tmdsview-web/design/applicant/{0}/{1}
+    dsview.representative.url: https://cg.am.intrasoft-euipo.int/tmdsview-web/design/representative/{0}/{1}
+    dsview.image.url: https://cg.am.intrasoft-euipo.int/tmdsview-web/design/image/{0}
+    dsview.thumbnail.url: https://cg.am.intrasoft-euipo.int/tmdsview-web/design/thumbnail/{0}
+    dsview.path:
+      design: Transaction,DesignTransactionBody,TransactionContentDetails,TransactionData,DesignDetails
+
+  wrong-attempts: 3
+  lock-time: 900
+  reset.password.token.period: 86400
+  account.registration.token.period: 86400
+
+  administrator.role: ROLE_ADMINISTRATOR
+  account.administrator.role: ROLE_ACCOUNT_ADMINISTRATOR
+  correspondence-read-only.role: ROLE_CORRESPONDENCE_READ_ONLY
+
+
+  security:
+    csrf:
+      header.name: X-CSRF-TOKEN-uab
+      attribute.name: _csrf
+
+  username:
+    pattern: '^[a-z0-9]{6,100}$'
+
+  password:
+    min-length: 8
+    max-length: 30
+    min-uppercase: 1
+    min-lowercase: 1
+    min-digits: 1
+    restricted-characters: '@!#$%^&*().\/"'
+    max-consecutive-characters: 3
+    max-repeated-sequence-characters: 3
+    max-common-sequence-characters: 5
+    previous-passwords: 3
+
+  i18n:
+    literal.basenames: classpath:i18n/literal/messages-literal
+  email.path: i18n/email/messages-email
+  data.path: classpath:data
+  template.path: classpath:templates
+
+  notifications:
+    languages: en,el
+    types: ACCOUNT_VERIFICATION,PASSWORD_RESET,PASSWORD_CHANGE,INCOMING_CORRESPONDENCE
+    variables: <IPO_title>,<UA_URL>,<First_name>,<Last_name>,<Organisation_name>,<To_user_email>,<verify_account_link>,<verify_account_code>,<password_reset_link>,<password_reset_code>,<UA_Correspondence_URL>
+
+  email-templates:
+    RESETPASSWORD:
+      path: email/send-reset-password.html
+    CONFIRMPASSWORD:
+      path: email/confirm-reset-password.html
+    REGISTRATION:
+      path: email/registration.html
+    CORRESPONDENCE:
+      path: email/correspondence.html
+
+  pdf-templates:
+    TRADEMARK:
+      path: pdf/trademark.html
+    DESIGN:
+      path: pdf/design.html
+    ESERVICE:
+      path: pdf/eservice.html
+    CORRESPONDENCE:
+      path: pdf/correspondence.html
+    TRADEMARK_DRAFT:
+      path: pdf/trademark-draft.html
+    DESIGN-DRAFT:
+      path: pdf/design-draft.html
+    ESERVICE_DRAFT:
+      path: pdf/eservice-draft.html
+    CORRESPONDENCE_DRAFT:
+      path: pdf/correspondence.html
+    INVOICE:
+      path: pdf/invoice.html
+
+  resourcesBaseUri: file:///config/
+
+  locktimeout: 900
+  lockscheduler: 0 0/1 * * * *
+  lockschedulerMin: PT1M
+  lockschedulerMax: PT2M
+  lockRepoProcess: MESSAGES,APPLICATIONS,NOTES,ACCOUNTS
+
+  search:
+    draft: number,applicant,representative,denomination,indication,lastModifiedBy
+    correspondence: procedure,applicationId,subject
+    paymentHistory: applicationNumbers,confirmationId,paidBy,paymentReference
+
+  status:
+    draft: Initialized
+    application: Waiting cc payment,Cc payment pending,Cc payment done,Cc payment cancelled,Cc payment failure,Submitted,Submitted attachments pending,Expiring,Expired,Registered,Ended,Application published,Registered & subject to deferment,Lack of effects,Design surrendered,Invalidity procedure pending,Design declined invalid,Design lapsed
+    signature: Pending signature
+    payment: Pending payment
+
+  correspondence:
+    reply:
+      backoffice:
+        service: http://localhost:7001
+        receipt: /mock/message/receipt/{0}
+        draft: /mock/draft/{0}
+    attachments:
+      maxFileNameSize: 25
+      maxFileNumber: 5
+    draft-reply:
+      max-attached-files: 5
+      max-fileName-characters: 25
+      max-filesize: 2097152
+
+
+  signature:
+    max-signatories: 5
+    callback:
+      # For development on windows and the mock services application running in docker
+      # we need to use the host.docker.internal because localhost is different when running from a container
+      # If you are running mock-services without docker you can use localhost
+      url: http://localhost:7001/signatures/callback
+    platform:
+      # The url the mock services project is accessible.
+      url: http://localhost:8111
+      createEndpoint: /api/signatures/create
+      getDetailsEndpoint: /api/signatures/
+    frontoffice:
+      updateEndpoint: application/updateSignatures
+      deleteEndpoint: application/deleteSignatures
+      receiptEndpoint: application/draftReceipt/
+    status:
+      completed: COMPLETED
+      completedUpdateFoFailed: COMPLETED_UPDATE_FO_FAILED
+      revoked: REVOKED
+      pending: PENDING
+      error: ERROR
+      canceled: CANCELED
+
+  payment:
+    callback:
+      # For development on windows and the mock services application running in docker
+      # we need to use the host.docker.internal because localhost is different when running from a container
+      # If you are running mock-services without docker you can use localhost
+      url: http://localhost:7001/payments/callback
+    platform:
+      # The url the mock services project is accessible.
+      url: http://localhost:8111
+      createEndpoint: /api/payments
+      getDetailsEndpoint: /api/payments/
+    frontoffice:
+      updateEndpoint: application/updatePayment
+
+  applications:
+    service: https://ua-local.dev/myapplications
+    applicationsEndPoint: /applications
+    filtersEndPoint: /filters
+
+  tm.eservice:
+    - uaValue: TM e-Filing
+      fovalue: TM
+    - uaValue: TM Change Owner details
+      fovalue: TM_CHANGE
+    - uaValue: TM Change Rep/Corr details
+      fovalue: TM_CHANGEREP
+    - uaValue: TM Generic
+      fovalue: TM_GENERIC
+    - uaValue: TM Invalidity
+      fovalue: TM_INVALIDITY
+    - uaValue: TM Licence Contract
+      fovalue: TM_LICENCE
+    - uaValue: TM Limit G&S
+      fovalue: TM_LIMITATION
+    - uaValue: TM Objection
+      fovalue: TM_OBJECTION
+    - uaValue: TM Opposition
+      fovalue: TM_OPPOSITION
+    - uaValue: TM Rights in rem
+      fovalue: TM_REM
+    - uaValue: TM Renewal
+      fovalue: TM_RENEWAL
+    - uaValue: TM Revocation
+      fovalue: TM_REVOCATION
+    - uaValue: TM Transfer
+      fovalue: TM_TRANSFER
+    - uaValue: TM Withdrawal/Surrender
+      fovalue: TM_WITHDRAWAL
+
+  ds.eservice:
+    - uaValue: DS e-Filing
+      fovalue: DS
+    - uaValue: DS Change Owner details
+      fovalue: DS_CHANGE
+    - uaValue: DS Change Rep/Corr details
+      fovalue: DS_CHANGEREP
+    - uaValue: DS Generic
+      fovalue: DS_GENERIC
+    - uaValue: DS Invalidity
+      fovalue: DS_INVALIDITY
+    - uaValue: DS Licence Contract
+      fovalue: DS_LICENCE
+    - uaValue: DS Rights in rem
+      fovalue: DS_REM
+    - uaValue: DS Renewal
+      fovalue: DS_RENEWAL
+    - uaValue: DS Transfer
+      fovalue: DS_TRANSFER
+
+  eserviceTypes:
+    design:
+      - key: DS_RENEWAL
+        label: eservice.ds.renewal
+      - key: DS_TRANSFER
+        label: eservice.ds.transfer
+      - key: DS_CHANGE
+        label: eservice.ds.change
+      - key: DS_CHANGEREP
+        label: eservice.ds.change.rep
+      - key: DS_GENERIC
+        label: eservice.ds.generic
+      - key: DS_INVALIDITY
+        label: eservice.ds.invalidity
+      - key: DS_LICENCE
+        label: eservice.ds.licence
+      - key: DS_REM
+        label: eservice.ds.rem
+
+    trademark:
+      - key: TM_RENEWAL
+        label: eservice.tm.renewal
+      - key: TM_TRANSFER
+        label: eservice.tm.transfer
+      - key: TM_CHANGE
+        label: eservice.tm.change
+      - key: TM_CHANGEREP
+        label: eservice.tm.change.rep
+      - key: TM_GENERIC
+        label: eservice.tm.generic
+      - key: TM_INVALIDITY
+        label: eservice.tm.invalidity
+      - key: TM_LICENCE
+        label: eservice.tm.licence
+      - key: TM_REM
+        label: eservice.tm.rem
+      - key: TM_OPPOSITION
+        label: eservice.tm.opposition
+      - key: TM_REVOCATION
+        label: eservice.tm.revocation
+      - key: TM_OBJECTION
+        label: eservice.tm.objection
+      - key: TM_WITHDRAWAL
+        label: eservice.tm.withdrawal
+      - key: TM_LIMITATION
+        label: eservice.tm.limitation
+
+storage:
+  repository:
+    datasource:
+      url: jdbc:mariadb://userarea-document-storage-database:3306/oak-db
+      username: userarea
+      password: secret
+      driver-class-name: org.mariadb.jdbc.Driver
+
+logging:
+  level:
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+    org.springframework.security.oauth2: INFO
+    org:
+      apache:
+        activemq: DEBUG

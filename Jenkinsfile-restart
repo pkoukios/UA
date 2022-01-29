@@ -1,0 +1,8 @@
+#!/usr/bin/env groovy
+
+@Library('jenkins-dsl-dry') _
+
+pipelineRestartPods {
+    namespaceSuffix ='cb'
+    deployments =['ms-userarea-ws']
+}

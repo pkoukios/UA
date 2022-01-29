@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>eu.euipo.etmdn.userarea</groupId>
+    <artifactId>ms-userarea</artifactId>
+    <version>2.0.0-RC1.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>user-area-backend</name>
+    <description>Front Office User Area</description>
+
+    <modules>
+        <module>ms-userarea-business</module>
+        <module>ms-userarea-domain</module>
+        <module>ms-userarea-external</module>
+        <module>ms-userarea-integration</module>
+        <module>ms-userarea-persistence</module>
+        <module>ms-userarea-security</module>
+        <module>ms-userarea-ws</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.version>3.8.1</maven.compiler.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <spring-boot.version>2.4.2</spring-boot.version>
+        <spring-cloud-config.version>3.0.1</spring-cloud-config.version>
+        <mariadb.version>2.6.0</mariadb.version>
+        <lombok.version>1.18.12</lombok.version>
+        <sl4j.version>2.0.0-alpha1</sl4j.version>
+        <apache-commons-collections.version>4.4</apache-commons-collections.version>
+        <apache-commons-lang.version>3.11</apache-commons-lang.version>
+        <apache-commons-text.version>1.9</apache-commons-text.version>
+        <hibernate.version>5.4.27.Final</hibernate.version>
+        <jackson.version>2.12.1</jackson.version>
+        <map-struct.version>1.4.1.Final</map-struct.version>
+        <openhtmltopdf.version>1.0.6</openhtmltopdf.version>
+        <apache-poi.version>5.0.0</apache-poi.version>
+        <jacoco.version>0.8.6</jacoco.version>
+        <mockito.version>3.8.0</mockito.version>
+        <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+        <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+        <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
+        <sonar.language>java</sonar.language>
+        <sonar.coverage.exclusions>
+            **/domain/**/*.java,**/config/**/*.java,**/security/**/*.java,**/constants/**/*.java
+        </sonar.coverage.exclusions>
+        <cucumber.version>5.1.3</cucumber.version>
+        <swagger-request-validator.version>2.8.3</swagger-request-validator.version>
+        <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
+        <maven-failsafe-plugin.version>${maven-surefire-plugin.version}</maven-failsafe-plugin.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Spring boot -->
+            <dependency>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- SPRING -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-config</artifactId>
+                <version>${spring-cloud-config.version}</version>
+            </dependency>
+
+            <!-- MariaDB -->
+            <dependency>
+                <groupId>org.mariadb.jdbc</groupId>
+                <artifactId>mariadb-java-client</artifactId>
+                <version>${mariadb.version}</version>
+            </dependency>
+
+            <!-- Lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!-- Jackson -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <!-- Sl4j -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-parent</artifactId>
+                <version>${sl4j.version}</version>
+            </dependency>
+
+            <!-- MapStruct -->
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${map-struct.version}</version>
+            </dependency>
+
+            <!-- openhtmltopdf -->
+            <dependency>
+                <groupId>com.openhtmltopdf</groupId>
+                <artifactId>openhtmltopdf-core</artifactId>
+                <version>${openhtmltopdf.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.openhtmltopdf</groupId>
+                <artifactId>openhtmltopdf-pdfbox</artifactId>
+                <version>${openhtmltopdf.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.openhtmltopdf</groupId>
+                <artifactId>openhtmltopdf-java2d</artifactId>
+                <version>${openhtmltopdf.version}</version>
+            </dependency>
+
+            <!-- Apache POI Excel -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${apache-poi.version}</version>
+            </dependency>
+
+            <!-- APACHE COMMONS LANG -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${apache-commons-lang.version}</version>
+            </dependency>
+
+            <!-- APACHE COMMONS TEXT -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-text</artifactId>
+                <version>${apache-commons-text.version}</version>
+            </dependency>
+
+            <!-- APACHE COMMONS COLLECTIONS -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${apache-commons-collections.version}</version>
+            </dependency>
+
+            <!-- Hibernate -->
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>${hibernate.version}</version>
+            </dependency>
+
+            <!-- Jacoco Maven Plugin -->
+            <dependency>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.version}</version>
+                <type>maven-plugin</type>
+            </dependency>
+
+            <!-- TEST -->
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- User Area -->
+            <dependency>
+                <groupId>eu.euipo.etmdn.userarea</groupId>
+                <artifactId>ms-userarea-business</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.euipo.etmdn.userarea</groupId>
+                <artifactId>ms-userarea-security</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.euipo.etmdn.userarea</groupId>
+                <artifactId>ms-userarea-domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.euipo.etmdn.userarea</groupId>
+                <artifactId>ms-userarea-persistence</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.euipo.etmdn.userarea</groupId>
+                <artifactId>ms-userarea-ws</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.euipo.etmdn.userarea</groupId>
+                <artifactId>ms-userarea-external</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.euipo.etmdn.userarea</groupId>
+                <artifactId>ms-userarea-integration</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- Common Backend User Area -->
+            <dependency>
+                <groupId>eu.euipo.etmdn.userarea</groupId>
+                <artifactId>ms-userarea-common-business</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+             <dependency>
+                 <groupId>eu.euipo.etmdn.userarea</groupId>
+                 <artifactId>ms-userarea-common-domain</artifactId>
+                 <version>${project.version}</version>
+             </dependency>
+             <dependency>
+                 <groupId>eu.euipo.etmdn.userarea</groupId>
+                 <artifactId>ms-userarea-common-persistence</artifactId>
+                 <version>${project.version}</version>
+             </dependency>
+             <dependency>
+                 <groupId>eu.euipo.etmdn.userarea</groupId>
+                 <artifactId>ms-userarea-common-ws</artifactId>
+                 <version>${project.version}</version>
+             </dependency>
+            <dependency>
+                <groupId>eu.euipo.etmdn.userarea</groupId>
+                <artifactId>ms-userarea-common-security-oauth2</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.euipo.etmdn.userarea</groupId>
+                <artifactId>ms-userarea-common-security-oauth2-oryhydra</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+         </dependencies>
+     </dependencyManagement>
+
+     <distributionManagement>
+         <repository>
+             <id>releases</id>
+             <name>Internal Releases</name>
+             <!--suppress UnresolvedMavenProperty -->
+            <url>${st.releases.url}</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>Internal Snapshots</name>
+            <!--suppress UnresolvedMavenProperty -->
+            <url>${st.snapshots.url}</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.version}</version>
+                <configuration>
+                    <destFile>${sonar.jacoco.reportPath}</destFile>
+                    <append>true</append>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>jacoco-initialize</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                        <phase>test-compile</phase>
+                    </execution>
+                    <execution>
+                        <id>jacoco-site</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+           <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>${maven-failsafe-plugin.version}</version>
+                <configuration>
+                    <excludes>
+                        <exclude>**/SvIT*.java</exclude>
+                        <exclude>**/*SvIT.java</exclude>
+                        <exclude>**/*SvITCase.java</exclude>
+                        <exclude>**/SIT*.java</exclude>
+                        <exclude>**/*SIT.java</exclude>
+                        <exclude>**/*SITCase.java</exclude>
+                    </excludes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <profiles>
+        <profile>
+            <id>integration-test</id>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-failsafe-plugin</artifactId>
+                        <version>${maven-failsafe-plugin.version}</version>
+                        <configuration>
+                            <systemProperties>
+
+                            </systemProperties>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>default-integration-test</id>
+                                <goals>
+                                    <goal>integration-test</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>

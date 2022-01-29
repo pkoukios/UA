@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>ms-userarea-integration</artifactId>
+        <groupId>eu.euipo.etmdn.userarea</groupId>
+        <version>2.0.0-RC1.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>ms-userarea-integration-mock</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>eu.euipo.etmdn.userarea</groupId>
+            <artifactId>ms-userarea-common-business</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>eu.euipo.etmdn.userarea</groupId>
+            <artifactId>ms-userarea-common-domain</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>eu.euipo.etmdn.userarea</groupId>
+            <artifactId>ms-userarea-common-persistence</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>eu.euipo.etmdn.userarea</groupId>
+            <artifactId>ms-userarea-business-core-impl</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.version}</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>${map-struct.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                    <compilerArgs>
+                        <arg>-Amapstruct.suppressGeneratorTimestamp=true</arg>
+                        <arg>-Amapstruct.defaultComponentModel=spring</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

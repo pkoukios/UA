@@ -1,0 +1,1841 @@
+openapi: "3.0.2"
+info:
+  version: 1.0.0
+  title: User Area API
+  description: API to manage User Area
+servers:
+  - url: https://ua-local.dev/backend
+    description: Local environment
+  - url: https://euipo353.am.intrasoft-euipo.int/backend
+    description: The dev environment
+  - url: https://euipo345.am.intrasoft-euipo.int/backend
+    description: The adaptive environment
+  - url: https://ccvli-ecp613/backend
+    description: The integration environment
+  - url: https://ccvli-ecp623/backend
+    description: The demo environment
+  - url: https://ccvlt-ecp314/backend
+    description: The test environment
+
+paths:
+
+  /api/v1/content/filters:
+    get:
+      summary: |
+        Retrieves the filters from the my applications microservice depending on configuration (fo or bo)
+      operationId: getFilters
+      tags:
+        - Application
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Filters'
+
+  /api/v1/applications/{applicationType}/{ipRightType}/{applicationNumber}/receipt:
+    get:
+      security:
+        - bearerAuth: [ ]
+      summary: |
+        Retrieves a receipt from frontoffice
+      operationId: getReceiptFromFrontoffice
+      tags:
+        - Application
+      parameters:
+        - name: applicationType
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: ipRightType
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: applicationNumber
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: isDraft
+          in: query
+          required: false
+          schema:
+            type: boolean
+      responses:
+        200:
+          description: ok
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        400:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: number
+                  details:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                      exception:
+                        type: string
+                  message:
+                    type: string
+
+  /api/v1/applications/{applicationType}/{ipRightType}/note/lock:
+    post:
+      security:
+        - bearerAuth: [ ]
+      tags:
+        - Application
+      summary: |
+        Lock note of application for modification
+      parameters:
+        - name: applicationType
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: ipRightType
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Notes
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                applicationIdentifier:
+                  type: string
+      responses:
+        200:
+          description: Success note locking
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  applicationIdentifier:
+                    type: string
+                  note:
+                    type: string
+        400:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /api/v1/applications/{applicationType}/{ipRightType}/note:
+    post:
+      security:
+        - bearerAuth: [ ]
+      tags:
+        - Application
+      summary: |
+        Add, edit and delete notes of application
+      parameters:
+        - name: applicationType
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: ipRightType
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Notes
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                applicationIdentifier:
+                  type: string
+                note:
+                  type: string
+      responses:
+        200:
+          description: Success note modification
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  applicationIdentifier:
+                    type: string
+                  note:
+                    type: string
+        400:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /api/v1/applications/{applicationType}/{ipRightType}/{id}/invoice:
+    get:
+      security:
+        - bearerAuth: [ ]
+      summary: |
+        Get Application invoice
+      operationId: getApplicationInvoice
+      tags:
+        - Application
+      parameters:
+        - name: applicationType
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: ipRightType
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: ok
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        400:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: number
+                  details:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                      exception:
+                        type: string
+                  message:
+                    type: string
+
+  /correspondences/message:
+    post:
+      security: []
+      summary: |
+        Creates a new correspondence message
+      operationId: create
+      tags:
+        - Correspondence message
+      requestBody:
+        description: Message data
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                messageResource:
+                  type: object
+                  properties:
+                    externalRef:
+                      type: string
+                      description: The external ref (its the message id of the sender)
+                      example: '1233334'
+                    recipientId:
+                      type: string
+                      description: The userarea account id
+                      example: 'a18753164bc08b0'
+                    type:
+                      type: string
+                      description: The dossier type
+                      example: 'TM Renewal'
+                    subType:
+                      type: string
+                      description: The dossier sub type
+                      example: 'TM Renewal'
+                    procedure:
+                      type: string
+                      description: procedure
+                      example: 'Decision'
+                    subject:
+                      type: string
+                      description: The message subject
+                      example: 'Message Subject'
+                    applicationId:
+                      type: string
+                      description: The application id
+                      example: 'EFEM202100000000008'
+                    dueDate:
+                      type: integer
+                      format: date-time
+                      description: the due date
+                      example: '2020-09-04 23:45:56'
+                    actionDate:
+                      type: integer
+                      format: date-time
+                      description: the action date
+                      example: '2020-09-04 23:45:56'
+                    requiresReply:
+                      type: boolean
+                      description: indicates if the message requires a reply or not
+                      example: true
+                    body:
+                      type: string
+                      description: The body of the message
+                      example: '<html><p>Hello!</p></html>'
+                    html:
+                      type: boolean
+                      description: indicates if the body of the message is html or not
+                      example: true
+                  example:
+                    externalRef: '1233334'
+                    recipientId: 'a18753164bc08b0'
+                    type: 'TM Renewal'
+                    procedure: 'Decision'
+                    subject: 'Message Subject'
+                    applicationId: 'EFEM202100000000008'
+                    dueDate: '2020-09-04 23:45:56'
+                    actionDate: '2020-09-05 23:45:56'
+                    requiresReply: true
+                    body: '<html><p>Hello!</p></html>'
+                    html: true
+                files:
+                  type: array
+                  items:
+                    type: string
+                    format: binary
+                    description: attachments
+      responses:
+        '201':
+          description: Created
+          content: {}
+        default:
+          description: unexpected error
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                title: "Message creation not allowed"
+                instance: "/correspondences/message"
+
+  /correspondences/message/search:
+    post:
+      security:
+        - bearerAuth: []
+      summary: |
+        Search and retrieves correspondence messages
+      operationId: search
+      tags:
+        - Correspondence message
+      requestBody:
+        description: search data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchCriteria'
+
+      responses:
+        '200':
+          description: OK
+          content: {}
+        default:
+          description: unexpected error
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                title: "Search Not allowed"
+                instance: "/correspondences/message/search"
+
+  /correspondences/message/expiring:
+    post:
+      security:
+        - bearerAuth: [ ]
+      tags:
+        - Correspondence message
+      summary: retrieves the number of messages that expired the next defined days and not having at at least one sent reply
+      description: returns the number of expiring messages
+      operationId: getExpiringMessagesCount
+      requestBody:
+        description: search data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchCriteria'
+      responses:
+        200:
+          description: the number of expiring messages
+        404:
+          description: Error
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /correspondences/message/incoming/new:
+    get:
+      security:
+        - bearerAuth: []
+      tags:
+        - Correspondence message
+      summary: retrieves the number of messages with status NEW
+      description: returns the number of messages
+      operationId: getNewIncomingMessageCount
+      responses:
+        200:
+          description: the number of NEW messages
+        404:
+          description: Error
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /correspondences/message/detail/{identifier}:
+    post:
+      security:
+        - bearerAuth: []
+      tags:
+        - Correspondence message
+      summary: gets the correspondence message details together with the drafts
+      description: returns incoming message details
+      operationId: getCorrespondenceDetails
+      parameters:
+        - name: identifier
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: search data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchCriteria'
+      responses:
+        200:
+          description: the message details
+        404:
+          description: Error
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /correspondences/draft:
+    post:
+      security:
+        - bearerAuth: []
+      summary: |
+        Creates a new draft response
+      operationId: createDraft
+      tags:
+        - Correspondence draft
+      parameters:
+        - name: messageId
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created
+          content: {}
+        default:
+          description: unexpected error
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                title: "Draft creation not allowed"
+                instance: "/correspondences/draft"
+
+    put:
+      security:
+        - bearerAuth: []
+      summary: |
+        Adds data to a created Draft
+      operationId: updateDraft
+      tags:
+        - Correspondence draft
+      requestBody:
+        description: draft data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DraftData'
+      responses:
+        '200':
+          description: OK
+          content: {}
+        default:
+          description: unexpected error
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                title: "Update draft data Not allowed"
+                instance: "/correspondences/draft"
+
+  /correspondences/draft/{identifier}:
+    delete:
+      security:
+        - bearerAuth: []
+      tags:
+        - Correspondence draft
+      description: sets a draft to inactive
+      summary: |
+        Adds data to a created Draft
+      operationId: deleteDraft
+      parameters:
+        - name: identifier
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: draft marked as inactive ok
+        404:
+          description: Error
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /correspondences/draft/send:
+    post:
+      security:
+        - bearerAuth: []
+      tags:
+        - Correspondence draft
+      summary: Sends a draft reply to the corresponding office
+      operationId: sendDraftReply
+      requestBody:
+        description: draft data
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                draftResource:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: the draft id
+                      example: 1
+                    messageId:
+                      type: integer
+                      description: the parent message id
+                      example: 10
+                    body:
+                      type: string
+                      description: the draft body text
+                      example: "<html>Hello!</html>"
+                  example:
+                    id: 1
+                    messageId: 10
+                    body: '<html><p>Hello!</p></html>'
+                files:
+                  type: array
+                  items:
+                    type: string
+                    format: binary
+                    description: attachments
+      responses:
+        '200':
+          description: OK
+          content: {}
+
+  /correspondences/draft/{identifier}/locked:
+    get:
+      security:
+        - bearerAuth: []
+      tags:
+        - Correspondence draft
+      summary: gets if a correspondence draft message is locked or not
+      description: returns true/false
+      operationId: isDraftLocked
+      parameters:
+        - name: identifier
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: true/false
+        404:
+          description: Error
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /correspondences/attachments/{draftId}:
+    post:
+      security:
+        - bearerAuth: []
+      tags:
+        - Correspondence attachments
+      summary: saves attachments for drafts
+      operationId: createAttachment
+      parameters:
+        - name: draftId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Draft Attachment data
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                files:
+                  type: array
+                  items:
+                    type: string
+                    format: binary
+                    description: attachments
+      responses:
+        200:
+          description: draft attachments uploaded ok
+        401:
+          description: Unauthorized
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /correspondences/attachments/{attachmentId}:
+    get:
+      security:
+        - bearerAuth: []
+      tags:
+        - Correspondence attachments
+      summary: gets an attachment for the draft
+      operationId: getAttachment
+      parameters:
+        - name: attachmentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        401:
+          description: Unauthorized
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      security:
+        - bearerAuth: []
+      tags:
+        - Correspondence attachments
+      summary: deletes an attachment for the draft
+      operationId: deleteAttachment
+      parameters:
+        - name: attachmentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        401:
+          description: Unauthorized
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /correspondences/attachments/draft/{draftAttachmentId}:
+    get:
+      security:
+        - bearerAuth: []
+      tags:
+        - Correspondence attachments
+      summary: gets an attachment for the draft reply
+      operationId: draftAttachmentId
+      parameters:
+        - name: draftAttachmentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        401:
+          description: Unauthorized
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /correspondences/download/incoming/{messageId}:
+    get:
+      security:
+        - bearerAuth: []
+      tags:
+        - Correspondence attachments download
+      summary: downloads the message correspondence with the attachment (zip)
+      operationId: getZip
+      parameters:
+        - name: messageId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        401:
+          description: Unauthorized
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /correspondences/download/draft/{draftId}:
+    get:
+      security:
+        - bearerAuth: []
+      tags:
+        - Correspondence attachments download
+      summary: downloads the draft message (pdf)
+      operationId: getDraftPdf
+      parameters:
+        - name: draftId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        401:
+          description: Unauthorized
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /signatures:
+    get:
+      security:
+        - bearerAuth: [ ]
+      operationId: getSignatures
+      tags:
+        - Signature details
+      summary: Retrieve applications that are candidates to be signed or have partially signed
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Signature'
+        404:
+          description: No signature record found
+          content: {}
+
+  /signatures/sign:
+    post:
+      security:
+        - bearerAuth: [ ]
+      summary: Create a signature id in external platform
+      tags:
+        - Signature
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  signatureId:
+                    type: string
+                    minLength: 1
+                  redirectToExternalPlatformUrl:
+                    type: string
+                    minLength: 1
+                required:
+                  - signatureId
+                  - redirectToExternalPlatformUrl
+      operationId: post-signatures-sign
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SignatureRequest'
+            examples:
+              example-1:
+                value:
+                  signatoryDetails:
+                    fullName: Test test
+                    email: test@test.com
+                    capacity: Applicant
+                  applicationIds:
+                    - applicationId1
+                    - applicationId2
+
+  /signatures/{identifier}:
+    delete:
+      security:
+        - bearerAuth: [ ]
+      operationId: deleteSignatures
+      tags:
+        - Signature
+      summary: Delete all signatures of an application
+      parameters:
+        - name: identifier
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: draft marked as inactive ok
+          content: {}
+        404:
+          description: No signature record found
+          content: {}
+
+  /signature/checkAddMore/{signatureId}:
+    get:
+      security:
+        - bearerAuth: []
+      tags:
+        - Signature
+      summary: For the applications that have already signed returns the ones that can have more signatures
+      operationId: getEligibleApplicationsForAddMore
+      parameters:
+        - schema:
+            type: string
+          name: signatureId
+          in: path
+          required: true
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+
+  /signatures/detailsFromPlatform/{signatureId}:
+    parameters:
+      - schema:
+          type: string
+        name: signatureId
+        in: path
+        required: true
+    get:
+      security:
+        - bearerAuth: [ ]
+      tags:
+        - Signature
+      summary: Get all details for a specified signature id from external platform
+      responses:
+        '200':
+          description: OK
+          headers: { }
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SignatureDetails'
+      operationId: get-signatures-detailsFromPlatform-signatureId
+
+  /signatures/delete/application/{applicationType}/{applicationNumber}:
+    delete:
+      security:
+        - bearerAuth: []
+      operationId: deleteApplication
+      tags:
+        - Signature Delete Application
+      summary: Delete application from signature tab
+      parameters:
+        - name: applicationType
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: applicationNumber
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationResponse'
+        404:
+          description: No application record found
+          content: { }
+
+  /signatures/modify/application/{applicationType}/{applicationNumber}:
+    put:
+      security:
+        - bearerAuth: []
+      operationId: modifyApplication
+      tags:
+        - Signature Modify Application
+      summary: Modify application from signature tab
+      parameters:
+        - name: applicationType
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: applicationNumber
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationResponse'
+        404:
+          description: No application record found
+          content: { }
+
+  /shoppingcarts:
+    post:
+      security:
+        - bearerAuth: []
+      summary: |
+        Retrieves the applications that are Pending payment status under the shopping cart
+      operationId: getShoppingCart
+      tags:
+        - Shopping Cart
+      requestBody:
+        description: search criteria
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchCriteriaShoppingCartResource'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShoppingCartResource'
+        default:
+          description: unexpected error
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                title: "Search Not allowed"
+                instance: "/shoppingcarts"
+
+  /shoppingcarts/modify/{applicationId}:
+    put:
+      security:
+        - bearerAuth: []
+      summary: |
+        Modifies an application from the shopping cart (change status)
+      operationId: modifyShoppingCart
+      tags:
+        - Shopping Cart
+      parameters:
+        - name: applicationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content: {}
+        404:
+          description: No application record found
+          content: { }
+
+  /shoppingcarts/delete/{applicationId}:
+    delete:
+      security:
+        - bearerAuth: []
+      summary: |
+        Deletes an application from the shopping cart (change status)
+      operationId: deleteFromShoppingCart
+      tags:
+        - Shopping Cart
+      parameters:
+        - name: applicationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content: {}
+        404:
+          description: No application record found
+          content: { }
+
+  /payments:
+    post:
+      security:
+        - bearerAuth: []
+      tags:
+        - Payment
+      summary: |
+        Initiate payment procedure and retreive transaction Id and redirect Url
+      requestBody:
+        description: Payment details
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reference:
+                  type: string
+                  example: "12345"
+                paymentType:
+                  type: string
+                  example: "CREDIT_CARD"
+                applicationNumbers:
+                  type: array
+                  items:
+                    type: string
+                  example: ["EF12323123123", "EF12312321312"]
+      responses:
+        200:
+          description: Success initiating payment
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  transactionId:
+                    type: string
+                    example: "312312321313123"
+                  redirectToPaymentPlatformUrl:
+                    type: string
+                    example: "http://localhost:8111/payments/312312321313123"
+        500:
+          description: Error from external payment platform
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  code:
+                    type: number
+                  details:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                      exception:
+                        type: string
+
+  /payments/checkStatus/{transactionId}:
+    get:
+      summary: |
+        Validation details about a payment transaction
+      security:
+        - bearerAuth: []
+      operationId: checkPaymentStatus
+      tags:
+        - Payment
+      parameters:
+        - name: transactionId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Validation details about the transaction
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentStatusResponse'
+
+  /payments/confirmation/{transactionId}:
+    get:
+      summary: |
+        A user can view details about a paid transaction
+      security:
+        - bearerAuth: []
+      operationId: getPaymentConfirmation
+      tags:
+        - Payment
+      parameters:
+        - name: transactionId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: A transaction is paid and user has access to view it
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentConfirmationResponse'
+
+  /payments/invoice/{transactionId}:
+    get:
+      security:
+        - bearerAuth: []
+      tags:
+        - Payment
+      summary: downloads the invoice of payment
+      operationId: getInvoice
+      parameters:
+        - name: transactionId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        401:
+          description: Unauthorized
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /payments/history/search:
+    post:
+      security:
+        - bearerAuth: [ ]
+      summary: |
+        Search and retrieves payments history
+      operationId: searchPaymentHistory
+      tags:
+        - Payment
+      requestBody:
+        description: Payment history search criteria
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentHistorySearchCriteriaResource'
+      responses:
+        200:
+          description: OK
+          content: { }
+        default:
+          description: unexpected error
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                title: "Search Not allowed"
+                instance: "/drafts/search"
+
+  /payments/history/download/invoice/{transactionId}:
+    get:
+      security:
+        - bearerAuth: []
+      tags:
+        - Payment
+      summary: downloads the invoice of payment
+      operationId: downloadInvoiceFromHistory
+      parameters:
+        - name: transactionId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        401:
+          description: Unauthorized
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: apiKey # arbitrary name for the security scheme
+      in: cookie
+      name: JSESSIONID_UAB
+  schemas:
+    ApplicationResponse:
+      type: object
+      description: the application response
+      properties:
+        applicationNumber:
+          type: string
+        resumeUrl:
+          type: string
+    DraftData:
+      type: object
+      description: the draft data
+      properties:
+        id:
+          type: integer
+          description: the draft id
+          example: 1
+        messageId:
+          type: integer
+          description: the parent message id
+          example: 11
+        body:
+          type: string
+          description: the draft body text
+          example: "<html>Hello!</html>"
+      required:
+        - id
+        - messageId
+        - body
+    ShoppingCartResource:
+      type: object
+      description: the shopping cart with the applications
+      properties:
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/ShoppingCartApplicationResource'
+    ShoppingCartApplicationResource:
+      type: object
+      description: the shopping cart application description
+      properties:
+        applicationId:
+          type: number
+          description: the application id
+          example: 11
+        type:
+          type: string
+          description: the application type
+          example: 'trademark'
+        number:
+          type: string
+          description: the application number
+          example: 'EFEM202100000000003'
+        applicant:
+          type: string
+          description: the applicants name
+          example: 'John Doe'
+        representative:
+          type: string
+          description: the representative name
+          example: 'Abibas'
+        lastModifiedDate:
+          type: string
+          format: date-time
+          example: '2021-03-12 13:21:26'
+        lastModifiedBy:
+          type: string
+          description: the last modified by field
+          example: 'Euipo Adaptive'
+        fees:
+          type: number
+          description: the application fees
+          example: 400.00
+    SearchCriteriaShoppingCartResource:
+      type: object
+      description: the search criteria for the shopping cart
+      properties:
+        sort:
+          $ref: '#/components/schemas/SearchShoppingCartSort'
+        sortType:
+          type: string
+          description: the type of sorting (ASC or DESC)
+          example: 'ASC'
+    SearchCriteria:
+      type: object
+      description: the correspondence search criteria
+      properties:
+        searchType:
+          type: string
+          $ref: '#/components/schemas/SearchMessageType'
+          description: The type of search (trademark or design)
+        requestPage:
+          type: integer
+          description: The requested page (0 being the first page)
+          example: 0
+        size:
+          type: integer
+          description: the page size
+          example: 10
+        sort:
+          type: string
+          $ref: '#/components/schemas/SearchMessageSort'
+          description: The column to sort on
+        sortType:
+          type: string
+          description: The sort type (ASC or DESC)
+          example: 'ASC'
+        filterCriteria:
+          type: object
+          $ref: '#/components/schemas/FilterCriteria'
+          description: the filter criteria
+        search:
+          type: string
+          description: The search term
+      required:
+        - searchType
+        - requestPage
+        - size
+        - sort
+        - sortType
+    SearchShoppingCartSort:
+      type: string
+      enum:
+        - TYPE
+        - APPLICATION
+        - APPLICANTS
+        - REPRESENTATIVES
+        - LAST_MODIFIED_DATE
+        - LAST_MODIFIED_BY
+        - FEES
+    SearchMessageSort:
+      type: string
+      enum:
+        - CATEGORY
+        - SUBJECT
+        - APPLICATION_NUMBER
+        - DUE_DATE
+        - STATUS
+        - RECEIVED_DATE
+        - SENT_DATE
+    SearchMessageType:
+      type: string
+      enum:
+        - TRADEMARKS
+        - DESIGNS
+    FilterCriteria:
+      type: object
+      description: the Correspondence filter criteria
+      properties:
+        categories:
+          type: array
+          description: List of categories that messages can be filtered
+          items:
+            type: string
+        statuses:
+          type: array
+          description: List of statuses that messages can be filtered
+          items:
+            type: string
+        requiresReply:
+          type: boolean
+          description: a boolean value to filter the messages if reply is needed or not
+          example: true
+        dates:
+          type: array
+          description: List of dates that messages can be filtered
+          items:
+            $ref: '#/components/schemas/CorrespondenceDate'
+    CorrespondenceDate:
+      type: object
+      description: the correspondence date
+      properties:
+        date:
+          type: string
+          description: The name of the date to be filtered
+          example: 'dueDate'
+        dateFrom:
+          type: string
+          format: date-time
+          description: the date from
+          example: '2021-05-08 23:45:56'
+        dateTo:
+          type: string
+          format: date-time
+          description: the date to
+          example: '2021-08-08 23:45:56'
+    Filters:
+      type: object
+      description: the filters
+      properties:
+        trademarkFilters:
+          type: object
+          properties:
+            types:
+              type: array
+              items:
+                type: object
+                properties:
+                  key:
+                    type: string
+                  value:
+                    type: string
+                  label:
+                    type: string
+            kinds:
+              type: array
+              items:
+                type: object
+                properties:
+                  key:
+                    type: string
+                  value:
+                    type: string
+                  label:
+                    type: string
+            statuses:
+              type: array
+              items:
+                type: object
+                properties:
+                  key:
+                    type: string
+                  value:
+                    type: string
+                  label:
+                    type: string
+            dates:
+              type: array
+              items:
+                type: object
+                properties:
+                  key:
+                    type: string
+                  value:
+                    type: string
+                  label:
+                    type: string
+        designFilters:
+          type: object
+          properties:
+            statuses:
+              type: array
+              items:
+                type: object
+                properties:
+                  key:
+                    type: string
+                  value:
+                    type: string
+                  label:
+                    type: string
+            dates:
+              type: array
+              items:
+                type: object
+                properties:
+                  key:
+                    type: string
+                  value:
+                    type: string
+                  label:
+                    type: string
+        eserviceFilters:
+          type: object
+          properties:
+            ipRightTypes:
+              type: array
+              items:
+                type: object
+                properties:
+                  key:
+                    type: string
+                  value:
+                    type: string
+                  label:
+                    type: string
+            tmFilteringTypes:
+              type: array
+              items:
+                type: object
+                properties:
+                  key:
+                    type: string
+                  value:
+                    type: string
+                  label:
+                    type: string
+            dsFilteringTypes:
+              type: array
+              items:
+                type: object
+                properties:
+                  key:
+                    type: string
+                  value:
+                    type: string
+                  label:
+                    type: string
+            statuses:
+              type: array
+              items:
+                type: object
+                properties:
+                  key:
+                    type: string
+                  value:
+                    type: string
+                  label:
+                    type: string
+            dates:
+              type: array
+              items:
+                type: object
+                properties:
+                  key:
+                    type: string
+                  value:
+                    type: string
+                  label:
+                    type: string
+            tmInitiatingTypes:
+              type: array
+              items:
+                type: object
+                properties:
+                  key:
+                    type: string
+                  label:
+                    type: string
+            DsInitiatingTypesItem:
+              type: array
+              items:
+                type: object
+                properties:
+                  key:
+                    type: string
+                  label:
+                    type: string
+    Signature:
+      type: object
+      description: the signature data
+      properties:
+        type:
+          type: string
+          description: The application type(trademark, design, eservice).
+        number:
+          type: string
+          description: The application number.
+        name:
+          type: string
+          description: List of people who signed the application as string with comma separated values.
+        capacity:
+          type: string
+          description: List of capacities of people who signed the application as string with comma separated values.
+        date:
+          type: string
+          description: List of date&time values for each signature as string with comma separated values.
+    SignatureRequest:
+      description: 'Payload to initiate the signature process'
+      type: object
+      properties:
+        signatoryDetails:
+          type: object
+          required:
+            - fullName
+            - capacity
+          properties:
+            fullName:
+              type: string
+              minLength: 1
+            email:
+              type: string
+              minLength: 1
+            capacity:
+              type: string
+              minLength: 1
+        applicationIds:
+          type: array
+          items:
+            type: string
+      required:
+        - signatoryDetails
+    SignatureDetails:
+      type: object
+      properties:
+        signatoryDetails:
+          $ref: '#/components/schemas/SignatoryDetails'
+        signatureId:
+          type: string
+        signedAt:
+          type: string
+        signingId:
+          type: string
+        status:
+          type: string
+        isValid:
+          type: boolean
+        errorCode:
+          type: string
+        errorMessage:
+          type: string
+    SignatoryDetails:
+      type: object
+      properties:
+        fullName:
+          type: string
+        email:
+          type: string
+        capacity:
+          type: string
+    Error:
+      type: object
+      properties:
+        title:
+          type: string
+          description: |
+            A short, human-readable summary of the problem type
+        detail:
+          type: string
+          description: |
+            A human-readable explanation specific to this occurrence of the problem
+        status:
+          type: integer
+          format: int32
+          description: |
+            The HTTP status code generated by the origin server for this occurrence of the problem
+        type:
+          type: string
+          format: uri
+          description: |
+            A URI reference [RFC3986] that identifies the
+                  problem type.  This specification encourages that, when
+                  dereferenced, it provide human-readable documentation for the
+                  problem type
+        instance:
+          type: string
+          format: uri-reference
+          description: |
+            A URI reference that identifies the specific occurrence of the problem.
+            It may or may not yield further information if dereferenced
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Error'
+      required:
+        - title
+        - detail
+    PaymentConfirmationResponse:
+      description: The details about a paid transaction
+      type: object
+      properties:
+        dataTimeOfSubmission:
+          type: string
+          description: Timestamp of the paid transaction
+        paymentMethod:
+          type: string
+          description: Type of payment
+        transactionId:
+          type: string
+          description: Unique identifier for a transaction shared with userarea and payment platform
+        confirmationId:
+          type: string
+          description: Unique identifier of a successfull payment
+        paymentReference:
+          type: string
+          description: The text the user typed at the start of a transaction as reference (max 200 characters)
+          maxLength: 200
+        paidBy:
+          type: string
+          description: The user you initiated the payment
+        paymentStatus:
+          type: string
+          enum:
+            - PAID
+            - PENDING
+            - FAILED
+            - PAID_UPDATE_FO_FAILED
+          description: The payment status
+        applications:
+          type: array
+          items:
+            type: object
+            properties:
+              applicationNumber:
+                type: string
+              applicationType:
+                type: string
+              applications:
+                type: string
+              representatives:
+                type: string
+              cost:
+                type: string
+        applicationsCount:
+          type: number
+          description: The number of applications that have been paid
+          example: 2
+        total:
+          type: string
+          description: The total amount of the transaction
+    PaymentStatusResponse:
+      type: object
+      properties:
+        transactionId:
+          type: string
+          description: Unique identifier for a transaction shared with userarea and payment platform
+        confirmationId:
+          type: string
+          description: Unique identifier of a successfull payment
+        status:
+          type: string
+          description: The payment status
+        isValid:
+          type: boolean
+          description: if the payment is considered paid
+        lastUpdated:
+          type: string
+          description: Timestamp of the last update
+        errorCode:
+          type: string
+          description: Literal constant of a translated field
+        errorMessage:
+          type: string
+          description: Error from payment platform
+    PaymentHistorySearchCriteriaResource:
+      type: object
+      description: the payment history search criteria
+      properties:
+        requestPage:
+          type: integer
+          description: The requested page (0 being the first page)
+          example: 0
+        size:
+          type: integer
+          description: the page size
+          example: 10
+        sort:
+          type: string
+          $ref: '#/components/schemas/PaymentHistorySearchSort'
+          description: The column to sort on
+        sortType:
+          type: string
+          description: The sort type (ASC or DESC)
+          example: 'ASC'
+        filterCriteria:
+          type: object
+          $ref: '#/components/schemas/PaymentHistorySearchFilterCriteria'
+          description: the filter criteria
+        search:
+          type: string
+          description: The search term
+      required:
+        - requestPage
+        - size
+        - sort
+        - sortType
+    PaymentHistorySearchSort:
+      type: string
+      enum:
+        - PAYMENT_ID
+        - PAID_BY
+        - PAYMENT_DATE
+        - PAYMENT_METHOD
+        - PAYMENT_TOTAL_COST
+    PaymentHistorySearchFilterCriteria:
+      type: object
+      description: the payment history filter criteria
+      properties:
+        ipRightTypes:
+          type: array
+          description: List of ipRight types the payments can be filtered
+          items:
+            type: string

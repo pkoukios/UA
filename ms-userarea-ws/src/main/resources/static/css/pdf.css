@@ -1,0 +1,13 @@
+td, th {
+  border-bottom: 1px solid #000000;
+  text-align: left;
+  padding: 8px;
+  height: 50px;
+}
+span {
+  font-size: 12px;
+  word-wrap: break-word;
+}
+span.column-value {
+  font-weight: bold;
+}

@@ -1,0 +1,8 @@
+#!/usr/bin/env groovy
+
+@Library('jenkins-dsl-dry') _
+
+pipelineDeploy {
+    deployment  ='ms-userarea-ws'
+    module = 'ms-userarea-ws'
+}

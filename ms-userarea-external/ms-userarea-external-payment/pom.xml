@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ $Id:: pom.xml 2021/05/11 02:02 achristo
+  ~
+  ~        . * .
+  ~      * RRRR  *   Copyright (c) 2012-2021 EUIPO: European Intelectual
+  ~     .  RR  R  .  Property Organization (trademarks and designs).
+  ~     *  RRR    *
+  ~      . RR RR .   ALL RIGHTS RESERVED
+  ~       *. _ .*
+  ~
+  ~  The use and distribution of this software is under the restrictions exposed in 'license.txt'
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>ms-userarea-external</artifactId>
+        <groupId>eu.euipo.etmdn.userarea</groupId>
+        <version>2.0.0-RC1.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>ms-userarea-external-payment</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>ms-userarea-external-payment-api</module>
+        <module>ms-userarea-external-payment-mock</module>
+    </modules>
+
+
+</project>

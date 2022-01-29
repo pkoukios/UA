@@ -1,0 +1,54 @@
+The use and distribution of this software is under the following restrictions, specified in the articles 6 and 32 of the Cooperation Agreement signed between EUIPO and the implementing EU MS IPO:
+
+ARTICLE 6 - OWNERSHIP/USE OF THE RULES
+    6.1   Unless stipulated otherwise in the Agreement, ownership of the results of the project/s contemplated under the Agreement, including intellectual property rights, and tof the reports and other documents relating to it shall be vested in the EUIPO
+    6.2   Without prejudice to paragraph 1, the EUIPO grants the IPO the right to make free use of the results of the projects results contemplated under the Agreement as it deems fit, provided it does not thereby breach its confidentiality obligations or existing intellectual property rights.
+    6.3   Without prejudice to the IP rights of the Parties existing prior to the conclusion of the present Agreement, the IPO grants the EUIPO a royalty-free license of use, disposal and sub-license of IP rights relating to data belonging to the former and being used in or transferred for the implementation of the projects covered under the present Agreement.
+
+ARTICLE 32 – MAINTENANCE & LICENSES OF DECENTRALISED TOOLS AND SOLUTIONS
+    32.1   The EUIPO (hereinafter, “the Licensor”) grants the IPO (hereinafter, “the Licensee”) a license on a royalty-free, non-exclusive and non-sublicensable basis for the IPO’s non-commercial use of decentralized tools and solutions developed under the ECP and its major improvements as it deems fit, under the terms and conditions stated hereafter and provided the IPO does not thereby breach its confidentiality obligations or existing intellectual property rights. Any use of the software or work (as defined hereafter), other than as authorised under this license is prohibited (to the extent such use is covered by a right of the copyright holder of the work).
+    32.2   For the purposes of this Part:
+        1) The Original Work or the Software refers to the EUIPO’s decentralized tools and solutions developed under the ECP and its major improvements distributed and/or communicated by the EUIPO under this licence, available as Source Code and also as Executable Code as the case may be. The term “Original Work” also includes all system documentation provided by the EUIPO to the IPO in relation to the software;
+        2) Derivative Works refer to the works or software that could be created by the licensee, based upon the Original Work or modifications thereof, including all relevant system documentation. This license does not define the extent of modification or dependence on the Original Work required in order to classify a work as a Derivative Work; this extent is determined by the applicable copyright law;
+        3) The Work refers to the Original Work and/or its Derivative Works;
+        4) The Source Code refers to the human-readable form of the Work which is the most convenient for people to study and modify;
+        5) The Executable Code refers to any code which has generally been compiled and which is meant to be interpreted by a computer as a program.
+        6) Contributor(s) refers to any natural or legal person who modifies the Work under the licence, or otherwise contributes to the creation of a Derivative Work.
+        7) The Parties refers to the licensor and the licensee.
+    32.3   For the purpose of this Agreement, the license is granted for the duration of copyright vested in the Original Work to do the following:
+        -        use the Work in any circumstance and for all usage,
+        -        reproduce the Work,
+        -        modify the Original Work, and make Derivative Works based upon the Work, in particular with a view to improve, enhance and/or adapt the existing work and/or correct defects or “bugs”
+    32.4   Those rights can be exercised on any media, supports and formats, whether now known or later invented, as far as the applicable law permits so.
+    32.5   The licensor may provide the Work either in its Source Code form, or as Executable Code. If the Work is provided as Executable Code, the licensor provides in addition a machine-readable copy of the Source Code of the Work along with each copy of the Work that the licensor distributes or indicates, in a notice following the copyright notice attached to the Work, a repository where the Source Code is easily and freely accessible for as long as the licensor continues to distribute and/or communicate the Work.
+    32.6   Nothing in this license is intended to deprive the licensee of the benefits from any exception or limitation to the exclusive rights of the rights owners in the Original Work or Software, of the exhaustion of those rights or of other applicable limitations thereto.
+    32.7   The grant of the rights mentioned above is subject to some restrictions and obligations imposed on the licensee. They are the following:
+        1) The licensee shall support the strategic objective of establishing a European IP Network;
+        2) The licensor shall be granted by the IPO a world-wide, royalty-free, non-exclusive and sub-licensable license for any and all modifications of the Original Work, and for any and all Derivative Works based upon the Work, made by or for the IPO. The licensor shall be granted the same rights in the Derivative Works as those granted to the IPO.
+        3) The Licensee shall keep intact all copyright, patent or trademarks notices and all notices that refer to the license and to the disclaimer of warranties. The licensee must include a copy of such notices and a copy of the licence with every copy of the Work he/she distributes and/or communicates. The licensee must cause any Derivative Work to carry prominent notices stating that the Work has been modified and the date of modification.
+        4) This License does not grant permission to use the trade names, trademarks, service marks, or names of the licensor, except as required for reasonable and customary use in describing the origin of the Work and reproducing the content of the copyright notice.
+    32.8   The original licensor warrants that the copyright in the Original Work granted hereunder is owned by him/her or licensed to him/her and that he/she has the power and authority to grant the license.
+    32.9   Each contributor warrants that the copyright in the modifications he/she brings to the Work are owned by him/her or licensed to him/her and that he/she has the power and authority to grant the license.
+    32.10   The Work may contain defects or “bugs” inherent to this type of software development. Further, the documentation concerning the software may not be uniform in nature or complete. For these reasons, the Work is provided under the license on an “as is” basis and without warranties of any kind concerning the Work, including without limitation merchantability, fitness for a particular purpose, absence of defects or errors, accuracy, completeness, non-infringement of intellectual property rights other than copyright. This disclaimer of warranty is an essential part of the license and a condition for the grant of any rights to the Work.
+    32.11 Except in the cases of willful misconduct or damages directly caused to natural persons, the licensor will in no event be liable for any direct or indirect, material or moral, damages of any kind, arising out of the license or of the use of the Work, including without limitation, damages for loss of goodwill, work stoppage, computer failure or malfunction, loss of data or any commercial damage, even if the licensor has been advised of the possibility of such damage. However, the licensor will be liable under statutory product liability laws as far such laws apply to the Work.
+    32.12 Furthermore, the licensor shall in no event be liable for any commercial or other damages arising from the licensee’s lack of use and/or lack of right to use additional software (e.g. database server, application server) which is necessary for making of the Original Work a workable system.
+    32.13   The license and the rights granted hereunder will terminate automatically upon any breach by the licensee of the terms of the license.
+    32.14 Without prejudice to the possibility to complete additional agreements, the licence represents the complete Agreement between the Parties as to the Work licensed hereunder. This license may be extended upon the written consent of both Parties.
+    32.15 If any provision of the license is invalid or unenforceable under the applicable law, this will not affect the validity or enforceability of the License as a whole. Such provision will be construed and/or reformed so as necessary to make it valid and enforceable.
+    32.16 This Licence shall be governed by the law of Spain.
+
+
+THIRD-PARTY LIBRARIES
+
+The use and distribution of this software must be done under the restriction of the licenses of the third-party libraries used for its development:
+    - BSD or New BSD
+    - MIT
+    - Apache Software License (ASL v2)26
+    - EHCACHE License (referring to the ASL v2)27
+    - Public domain
+    - Eclipse Public Licensev1 (EPL)
+    - Common Development and Distribution License(CDDL)
+    - GNU General Public Licensev2  (GPL)
+    - GNU Lesser General Public License(LGPL)
+    - Creative Commons 3.0 BY-SA
+    - Day Specification License, Day Specification License addendum

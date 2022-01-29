@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="static/css/pdf.css"/>
+    <style>
+    @page {
+        @bottom-right {
+            content: "Page " counter(page) " of " counter(pages);
+            font-family: sans-serif;
+            padding-right: 10px;
+        }
+    }
+    </style>
+</head>
+<body>
+<div>
+    <main>
+        <h1 style="text-align: center; padding-bottom: 30px;">Userarea - Trademarks</h1>
+        <table border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr th:each="item : ${applications}" style="padding: 5px;  width: 100%; height: 100px; border: 1px solid #000000; page-break-inside: avoid;">
+                <td style="padding: 5px; width: 20%; text-align: center;">
+                    <img th:src="${'data:image/jpeg;base64,' + item.graphicalRepresentation}" alt="" height="100px" style="margin: 0 auto;"/>
+                </td>
+                <td style="text-align: left; width: 40%;">
+                    <span>APPLICATION NUMBER: <span th:class="column-value" th:text="${item.number}"></span></span><br/>
+                    <span>APPLICATION DATE: <span th:class="column-value" th:text="${item.applicationDate}"></span></span><br/>
+                    <span>TYPE: <span th:class="column-value" th:text="${item.type}"></span></span><br/>
+                    <span>KIND: <span th:class="column-value" th:text="${item.kind}"></span></span><br/>
+                    <span>DENOMINATION: <span th:class="column-value" th:text="${item.denomination}"></span></span><br/>
+                    <span>NICE CLASSIFICATION: <span th:class="column-value" th:text="${item.niceClass}"></span></span><br/>
+                    <span>STATUS: <span th:class="column-value" th:text="${item.status}"></span></span><br/>
+                </td>
+                <td style="text-align: left; width: 40%;">
+                    <span>STATUS DATE: <span th:class="column-value" th:text="${item.statusDate}"></span></span><br/>
+                    <span>REGISTRATION NUMBER: <span th:class="column-value" th:text="${item.registrationNumber}"></span></span><br/>
+                    <span>REGISTRATION DATE: <span th:class="column-value" th:text="${item.registrationDate}"></span></span><br/>
+                    <span>EXPIRATION DATE: <span th:class="column-value" th:text="${item.expirationDate}"></span></span><br/>
+                    <span>PUBLICATION DATE: <span th:class="column-value" th:text="${item.publicationDate}"></span></span><br/>
+                    <span>APPLICANT(S) NAME: <span th:class="column-value" th:text="${item.applicant}"></span></span><br/>
+                    <span>REPRESENTATIVE(S) NAME: <span th:class="column-value" th:text="${item.representative}"></span></span><br/>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </main>
+</div>
+</body>
+</html>

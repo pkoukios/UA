@@ -1,0 +1,7 @@
+#!/usr/bin/env groovy
+ 
+@Library('jenkins-dsl-dry') _
+ 
+pipelineSonar {
+    maven='3.6.3'
+}

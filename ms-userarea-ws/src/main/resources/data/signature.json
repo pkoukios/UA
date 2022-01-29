@@ -1,0 +1,20 @@
+{
+  "capacityTypes": [
+    {
+      "key": "Applicant",
+      "label": "signature.capacity.applicant"
+    },
+    {
+      "key": "Employee Representative",
+      "label": "signature.capacity.employee.representative"
+    },
+    {
+      "key": "Legal practitioner",
+      "label": "signature.capacity.legal.practitioner"
+    },
+    {
+      "key": "EUIPO Professional Practitioner",
+      "label": "signature.capacity.professional.practitioner"
+    }
+  ]
+}

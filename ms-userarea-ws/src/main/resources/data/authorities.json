@@ -1,0 +1,42 @@
+{
+    "trademarks": {
+        "key": "trademarks",
+        "authorityRole": "ROLE_TRADEMARKS",
+        "dependency": null
+    },
+    "designs": {
+        "key": "designs",
+        "authorityRole": "ROLE_DESIGNS",
+        "dependency": null
+    },
+    "accountAdministrator": {
+        "key": "account.administrator",
+        "authorityRole": "ROLE_ACCOUNT_ADMINISTRATOR",
+        "dependency": null
+    },
+    "applicationSubmit": {
+        "key": "application.submit",
+        "authorityRole": "ROLE_APPLICATION_SUBMIT",
+        "dependency": "ROLE_TRADEMARKS,ROLE_DESIGNS"
+    },
+    "correspondenceReadOnly": {
+        "key": "correspondence.read.only",
+        "authorityRole": "ROLE_CORRESPONDENCE_READ_ONLY",
+        "dependency": "ROLE_TRADEMARKS,ROLE_DESIGNS"
+    },
+    "correspondenceReadWrite": {
+        "key": "correspondence.read.write",
+        "authorityRole": "ROLE_CORRESPONDENCE_READ_WRITE",
+        "dependency": "ROLE_TRADEMARKS,ROLE_DESIGNS"
+    },
+    "signatures": {
+        "key": "signatures",
+        "authorityRole": "ROLE_SIGNATURES",
+        "dependency": "ROLE_TRADEMARKS,ROLE_DESIGNS"
+    },
+    "payments": {
+        "key": "payments",
+        "authorityRole": "ROLE_PAYMENTS",
+        "dependency": "ROLE_TRADEMARKS,ROLE_DESIGNS,ROLE_APPLICATION_SUBMIT"
+    }
+}

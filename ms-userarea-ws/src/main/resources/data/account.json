@@ -1,0 +1,10 @@
+{
+    "applicant": "Applicant",
+    "representative": "Representative",
+    "business.company": "Business/Company",
+    "individuals": "Individual(s)",
+    "employee.representative": "Employee Representative",
+    "legal.practitioner": "Legal Practitioner",
+    "euipo.professional.practitioner": "EUIPO Professional Practitioner",
+    "association": "Association"
+}

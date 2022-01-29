@@ -1,0 +1,5 @@
+spring:
+  application.name: user-area-backend
+  cloud:
+    config:
+      enabled: false

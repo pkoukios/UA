@@ -1,0 +1,65 @@
+<!--
+  ~ $Id:: correspondence.html 2021/04/02 12:06 tantonop
+  ~
+  ~        . * .
+  ~      * RRRR  *   Copyright (c) 2012-2021 EUIPO: European Intelectual
+  ~     .  RR  R  .  Property Organization (trademarks and designs).
+  ~     *  RRR    *
+  ~      . RR RR .   ALL RIGHTS RESERVED
+  ~       *. _ .*
+  ~
+  ~  The use and distribution of this software is under the restrictions exposed in 'license.txt'
+  ~
+  -->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="static/css/correspondencepdf.css"/>
+
+</head>
+<body>
+<div class="row">
+    <img src="static/logo.png"  th:src="@{static/logo.png}"/>
+</div>
+<div class="toprowmiddle">
+
+            <h1 style="text-align: center; padding-bottom: 30px;">
+                <span th:text="${data.procedure}"></span>
+                <span>      </span>
+                <span th:text="${data.applicationId}"></span>  <span th:text="${data.sentReceivedDate}"></span>
+            </h1>
+
+</div>
+
+<div class="topData">
+
+    <h1 style="text-align: center; padding-bottom: 30px;">
+               <span class="datarow"><b>Recipient/Sender:</b> <span th:text="${data.recipientSender}"></span></span>
+               <span class="datarow"><b>Due Date:</b><span th:text="${data.dueDate}"></span></span>
+    </h1>
+</div>
+<div class="midData">
+
+    <h1 style="text-align: center; padding-bottom: 30px;">
+        <span class="datarow" th:text="${data.subject}"></span><br/>
+    </h1>
+        <span class="datarow" th:text="${data.body}"></span>
+
+</div>
+<div class="midbottomData">
+
+        <span th:align="left"> Statement</span><br/>
+        <i>I certify the truthfulness and completeness of the information present in this document.</i>
+
+</div>
+<div class="bottomData">
+
+    <h1 style="text-align: center; padding-bottom: 30px;">
+        <span th:align="center" class="datarow" th:text="${data.ipoDetails}"></span><br/>
+
+    </h1>
+</div>
+</body>
+</html>

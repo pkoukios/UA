@@ -1,0 +1,9 @@
+{
+  "paymentMethods": [
+    { "label": "payment.credit.card", "key": "CREDIT_CARD" },
+    { "label": "payment.online.bank.transfer", "key": "BANK_TRANSFER" },
+    { "label": "payment.debit.card", "key": "DEBIT_CARD" },
+    { "label": "payment.postal.order", "key": "POSTAL_ORDER" },
+    { "label": "payment.online.payment", "key": "ONLINE_PAYMENT" }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "categories": [
+    {
+      "key": "Decision",
+      "label": "correspondence.filter.category.decision"
+    },
+    {
+      "key": "Order",
+      "label": "correspondence.filter.category.order"
+    },
+    {
+      "key": "Invitation",
+      "label": "correspondence.filter.category.invitation"
+    },
+    {
+      "key": "Notification",
+      "label": "correspondence.filter.category.notification"
+    },
+    {
+      "key": "Other",
+      "label": "correspondence.filter.category.other"
+    }
+  ],
+  "statuses": [
+    {
+      "key": "NEW",
+      "label": "correspondence.filter.status.new"
+    },
+    {
+      "key": "READ",
+      "label": "correspondence.filter.status.read"
+    },
+    {
+      "key": "DRAFT",
+      "label": "correspondence.filter.status.draft"
+    },
+    {
+      "key": "SENT",
+      "label": "correspondence.filter.status.sent"
+    }
+  ],
+  "dates": [
+    {
+      "key": "dueDate",
+      "label": "correspondence.filter.date.dueDate"
+    }
+  ],
+  "requiresReply": [
+    {
+      "key": true,
+      "label": "correspondence.filter.reply.yes"
+    },
+    {
+      "key": false,
+      "label": "correspondence.filter.reply.no"
+    }
+  ]
+}
